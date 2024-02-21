@@ -13,13 +13,14 @@ get_header()?>
             </video>
             <div class="hero-content-container">
                 <div class="hero-content">
-                    <h1>CDR BEYOND BOUNDARIES CLOUD NATIVE, INTEROPERABLE, AUTO-SYNCING CDR FOR HEALTHCARE ENTERPRISES</h1>
+<!--                    <h1>CDR BEYOND BOUNDARIES CLOUD NATIVE, INTEROPERABLE, AUTO-SYNCING CDR FOR HEALTHCARE ENTERPRISES</h1>-->
+                    <h1>'Always Up to Date’ and ‘Always Available’ Clinical Encounter Data for Payers</h1>
                     <hr>
-                    <span class="hero-text">Cras aliquam leo quis semper viverra. Fusce vel purus rhoncus, interdum ligula vel, cursus ipsum. Nullam massa elit, commodo id tincidunt id, tincidunt nec dui. Morbi iaculis venenatis sapien, eget mollis tellus gravida et.</span>
+                    <span class="hero-text">Seamless bi-directional data exchange between Payer-Providers, Payer-Payer, Payer-Patients</span>
                 </div>
                 <div class="hero-content-bottom">
                      <p class="box-button">
-                         <button id="show-video-btn" class="btn" >WATCH A SHORT VIDEO</button>
+                         <button id="show-video-btn" class="btn" >Learn How</button>
                      </p>
                 </div>
             </div>
