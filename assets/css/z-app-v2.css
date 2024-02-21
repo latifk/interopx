@@ -1281,6 +1281,105 @@ div#testing {
     padding-bottom: 5rem;
 }
 
+.home-hero-video-back {
+    width: 100%;
+    height: 100%;
+    /*position: absolute;*/
+    z-index: -1;
+}
+
+/*#hero-video {*/
+/*    display: none;*/
+/*}*/
+
+#hero-video {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 999;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 800px; /* Set a maximum width if desired */
+}
+
+#video {
+    width: 100%;
+    height: auto; /* Maintain the aspect ratio */
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.home-hero-video {
+    width: 65%;
+    height: 65%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content {
+    text-align: center;
+    /*border: 5px solid;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width:33% ;
+}
+
+.hero-content-bottom {
+    text-align: center;
+    /*border: 5px solid;*/
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.hero-content h1 {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 200;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+.hero-content .box-button {
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+hr {
+    border: 2px solid #0E8AF0;
+    border-radius: 2px;
+    width: 80%;
+    margin: 10px auto;
+
+}
+
+.hero-text {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 100;
+}
+
 @media screen and (max-width: 767px) {
 
     header {

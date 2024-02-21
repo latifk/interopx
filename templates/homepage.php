@@ -6,19 +6,30 @@
 get_header()?>
 
 <section class ="home-hero">
-    <div class="hero-video">
-        <figure>
-            <video class="home-hero-video-1" muted loop autoplay playsinline style="height: 100%; width: 100%;">
-            <source src="/wp-content/themes/interopx/assets/video/Interop_landing_page.mp4" type="video/mp4; codec='hvcl">
-        </video>
-        </figure>
-    </div>
-    <div class="home-hero-video-2">
-        <figure>
-            <video class="home-hero-video-2" muted loop autoplay playsinline style="height: 100%; width: 100%;">
+    <div class="home-hero">
+        <div class="hero-video-back">
+            <video class="home-hero-video-back" muted loop autoplay playsinline>
+                <source src="/wp-content/themes/interopx/assets/video/Interop_landing_page.mp4" type="video/mp4; codec='hvcl">
+            </video>
+            <div class="hero-content">
+                <h1>CDR BEYOND BOUNDARIES CLOUD NATIVE, INTEROPERABLE, AUTO-SYNCING CDR FOR HEALTHCARE ENTERPRISES</h1>
+                <hr>
+                <span class="hero-text">Cras aliquam leo quis semper viverra. Fusce vel purus rhoncus, interdum ligula vel, cursus ipsum. Nullam massa elit, commodo id tincidunt id, tincidunt nec dui. Morbi iaculis venenatis sapien, eget mollis tellus gravida et.</span>
+            </div>
+            <div class="hero-content-bottom">
+                <p class="box-button">
+<!--                    <a href="#">Watch a short video</a>-->
+                    <button onclick="toggleVideo()" id="toggleBtn">Watch Short Video</button>
+                    <button id="show-video-btn">Show Video</button>
+                </p>
+            </div>
+        </div>
+        <div id="hero-video" class="hero-video">
+            <span id="close-btn">&times;</span>
+            <video id="video" controls class="home-hero-video">
                 <source src="/wp-content/uploads/2024/02/iX-DataBridge_V1.mp4" type="video/mp4; codec='hvcl">
             </video>
-        </figure>
+        </div>
     </div>
 </section>
 <!--<section class="slider-home">-->
