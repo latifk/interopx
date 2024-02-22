@@ -9,7 +9,7 @@ if (!is_front_page()) {
     $video = 'Interop_Page 2_landing_Optimized.mp4';
     $show_button = false;
     $page_title = "IX Databridge - A Fully Automated Bi-Directional Data Exchange Solution";
-    $subtitle = "Seamless Payer-Providers, Payer-Payer, Payer-Patients, Payer to Partners Interoperabilit";
+    $subtitle = "Seamless Payer-Providers, Payer-Payer, Payer-Patients, Payer to Partners Interoperability";
 }
 else {
     $video = 'Interop_landing_page.mp4';
@@ -37,7 +37,7 @@ else {
                 <?php if ($show_button) { ?>
                 <div class="hero-content-bottom">
                      <p class="box-button">
-                         <button id="show-video-btn" class="btn" >Learn How</button>
+                         <button id="show-video-btn" class="btn" >Watch a Short Video</button>
                      </p>
                 </div>
                 <?php } ?>

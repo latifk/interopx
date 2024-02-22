@@ -7,6 +7,11 @@ body.home {
     background: #252B40 0% 0% no-repeat padding-box;
 }
 
+body.products {
+    /* background: url(/wp-content/themes/interopx/assets/images/float-bg.svg); */
+    background: #252B40 0% 0% no-repeat padding-box;
+}
+
 body.certifications,
 body.about {
     background: #f4f7ff;
@@ -221,7 +226,8 @@ section.boxes .col-12 {
 }
 
 section.boxes ul {
-    padding: 0 220px;
+    /*padding: 0 220px;*/
+    padding: 0 40px;
     font-size: 14px;
 }
 
@@ -1332,7 +1338,7 @@ div#testing {
     border: none;
     /*border-radius: 20px;*/
     padding: 12px 50px;
-    width: 200px;
+    width: 300px;
 }
 
 .home-hero-video {
@@ -1350,7 +1356,7 @@ div#testing {
     text-align: center;
     /*border: 5px solid;*/
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
