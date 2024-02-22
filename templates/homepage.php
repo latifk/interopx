@@ -4,53 +4,54 @@
  * Template name: Homepage
  */
 get_header();
-$current_url = home_url($_SERVER['REQUEST_URI']);
 
-//if (strpos($current_url, '/products/') !== false) {
-if (is_front_page()) {
-    $video_back = '/wp-content/themes/interopx/assets/video/Interop_Page 2_landing_Optimized.mp4';
+if (!is_front_page()) {
+    $video = 'Interop_Page 2_landing_Optimized.mp4';
     $show_button = false;
-    $title = "'Always Up to Date’ and ‘Always Available’ Clinical Encounter Data for Payers";
-    $subtitle = "Seamless bi-directional data exchange between Payer-Providers, Payer-Payer, Payer-Patients";
-} 
-else
-{
-    $video_back = '/wp-content/themes/interopx/assets/video/Interop_landing_page.mp4';
+    $page_title = "IX Databridge - A Fully Automated Bi-Directional Data Exchange Solution";
+    $subtitle = "Seamless Payer-Providers, Payer-Payer, Payer-Patients, Payer to Partners Interoperabilit";
+}
+else {
+    $video = 'Interop_landing_page.mp4';
     $show_button = true;
-    $title = "IX Databridge - A Fully Automated Bi-Directional Data Exchange Solution";
-    $subtitle = "Seamless Payer-Providers, Payer-Payer, Payer-Patients, Payer to Partners Interoperability";
+    $page_title = "'Always Up to Date’ and ‘Always Available’ Clinical Encounter Data for Payers";
+    $subtitle = "Seamless bi-directional data exchange between Payer-Providers, Payer-Payer, Payer-Patients";
 }
 
 ?>
 
-<section class ="home-hero">
+<section class ="home-hero slider-home">
+    <div class="container-fluid">
+<!--        <div class="row">-->
     <div class="home-hero">
         <div id="hero-container" class="hero-video-back">
             <video class="home-hero-video-back" muted loop autoplay playsinline>
-                <source src="<?php echo $video_back; ?>" type="video/mp4; codec='hvcl">
+                <source src="/wp-content/themes/interopx/assets/video/<?php echo $video; ?>" type="video/mp4; codec='hvcl">
             </video>
             <div class="hero-content-container">
                 <div class="hero-content">
-                    <h1>'<?php echo $title; ?></h1>
-                    <hr>
+                    <h1><?php echo $page_title; ?></h1>
+<!--                    <hr class = "line">-->
                     <span class="hero-text"><?php echo $subtitle; ?></span>
                 </div>
+                <?php if ($show_button) { ?>
                 <div class="hero-content-bottom">
                      <p class="box-button">
                          <button id="show-video-btn" class="btn" >Learn How</button>
                      </p>
                 </div>
+                <?php } ?>
             </div>
         </div>
-        <?php if ($show_button) { ?>
         <div id="hero-video" class="hero-video">
             <span id="close-btn">&times;</span>
             <video id="video" controls class="home-hero-video">
                 <source src="/wp-content/uploads/2024/02/iX-DataBridge_V1.mp4" type="video/mp4; codec='hvcl">
             </video>
         </div>
-        <?php } ?>
     </div>
+    </div>
+<!--    </div>-->
 </section>
 <!--<section class="slider-home">-->
 <!--      <div class="container-fluid">-->
@@ -63,7 +64,6 @@ else
 <!--                  <div class="slider-info">-->
 <!--                    <h1>-->
 <!--                      --><?php //echo $slide['title']; ?>
-<!--                    </h1>-->
 <!--                    <p>-->
 <!--                      --><?php //echo $slide['description']; ?>
 <!--                    </p>-->
