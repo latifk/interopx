@@ -1325,17 +1325,14 @@ div#testing {
 }
 
 #show-video-btn {
-    margin-top: 30px;
+    margin-top: 40px;
     /*padding: 8px 12px;*/
     cursor: pointer;
     background-color: #007BFF;
     color: #fff;
     border: none;
     border-radius: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 12px 50px;
 }
 
 .home-hero-video {
@@ -1374,7 +1371,7 @@ div#testing {
 .hero-content h1 {
     color: #fff;
     /*font-size: 26px;*/
-    font-weight: 200;
+    font-weight: 400;
     margin-left: auto;
     margin-right: auto;
     z-index: 1;
@@ -1399,10 +1396,10 @@ hr {
     font-size: 22px;
     font-weight: 100;
 }
-x
+
 @media screen and (max-width: 767px) {
     section.boxes {
-        margin: 10rem 0px;
+        margin: 10rem 0;
     }
 
     #show-video-btn {
@@ -1419,7 +1416,7 @@ x
         left: 5%;
         transform: none;
         padding: 10px;
-        width:90% ;
+        width: 90%;
 
         h1 {
             font-size: 22px;
