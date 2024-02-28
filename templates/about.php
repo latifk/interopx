@@ -19,7 +19,7 @@ get_header(); ?>
         <div class="row">
 		  <?php foreach(get_field('boxes_section_one') as $box) { ?>
           <div class="col-6">
-            <div class="mission-vission-box">
+            <div class="mission-vission-box card-light">
               <figure>
                 <img
                   src="<?php echo $box['image']; ?>"
@@ -45,7 +45,7 @@ get_header(); ?>
         <div class="row">
 		  <?php foreach(get_field('team_members') as $member) { ?>
           <div class="col-6">
-            <div class="leadership-box">
+            <div class="leadership-box card-light">
               <figure>
                 <img src="<?php echo $member['image']; ?>" alt="" />
                 <a href="<?php echo $member['linkedin']; ?>" class="person-social-icon" target="_blank">
@@ -53,7 +53,7 @@ get_header(); ?>
                 </a>
               </figure>
               <div class="person-info">
-                <h2><?php echo $member['name']; ?></h2>
+                <h3><?php echo $member['name']; ?></h3>
                 <p><?php echo $member['position']; ?></p>
                 <p class="description">
                   <?php echo $member['description']; ?>
@@ -76,11 +76,11 @@ get_header(); ?>
         <div class="row">
 		  <?php foreach(get_field('cards') as $card) { ?>
           <div class="col-6">
-            <div class="capability-box">
+            <div class="capability-box card-light">
               <figure>
                 <img src="<?php echo $card['icon']; ?>" alt="" />
               </figure>
-              <h2><?php echo $card['title']; ?></h2>
+              <h3><?php echo $card['title']; ?></h3>
               <p>
                 <?php echo $card['description']; ?>
               </p>

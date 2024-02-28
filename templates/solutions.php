@@ -4,7 +4,15 @@
  * Template name: Solutions
  */
 get_header(); ?>
-
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center"><?php echo the_title(); ?></h1>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="solutions-hero">
       <figure style="background: white">
         <?php require_once(get_template_directory() . '/assets/images/solutions-animation.svg'); ?>  

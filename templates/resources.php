@@ -19,7 +19,7 @@ get_header(); ?>
       <div class="container">
         <div class="row">
           <?php foreach(get_field('boxes') as $box) { ?>
-          <div class="col-12">
+          <div class="col-12 card-light">
             <figure>
               <img
                 src="<?php echo $box['image']; ?>"

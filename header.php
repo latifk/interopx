@@ -7,7 +7,13 @@
 			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
 			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); 
 			})(window,document,'script','dataLayer','GTM-TNHP9SM');
-	  </script> 
+	  </script>
+      <!-- Salesflare tracking -->
+<!--      <script src="https://track.salesflare.com/flare.js"></script>-->
+<!--      <script>-->
+<!--          var flare = new Flare();-->
+<!--          flare.track("KK1bazWGSoID0eB5UK5Jdbv4BCxmbEjK_Ra0kH32WgVVc");-->
+<!--      </script>-->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
