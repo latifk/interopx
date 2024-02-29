@@ -96,8 +96,9 @@ a.dropdown-item {
 }
 
 a.dropdown-item:hover {
+    color: #2b99f3 !important;
     background: none;
-    border-bottom: 2px solid #2b99f3 !important;
+    font-weight: bold;
 }
 
 .menu-wrapper {
@@ -1444,6 +1445,11 @@ div#testing {
     /*    top: 100%;*/
     /*    left: 0;*/
     /*}*/
+    li.nav-item:hover:after {
+        content: "";
+        background: none;
+    }
+
     a.navbar-brand img {
         height: 110px;
     }
