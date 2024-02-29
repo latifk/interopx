@@ -4,50 +4,33 @@
  * Template name: Homepage
  */
 get_header();
-
-if (!is_front_page()) {
-    $page_class = "products";
-    $video = 'Interop_Page 2_landing_Optimized.mp4';
-    $show_button = true;
-    $page_title = "iX DataBridge – A Fully Automated Bi-Directional Data Exchange Solution";
-    $subtitle = "Seamless Payer-Providers, Payer-Payer, Payer-Patients, Payer to Partners Interoperability";
-}
-else {
     $page_class = "frontpage";
     $video = 'Interop_landing_page.mp4';
     $show_button = true;
     $page_title = "'Always Up to Date’ and ‘Always Available’ Clinical Encounter Data for Healthcare Organizations";
     $subtitle = "Create Real-World Interoperable and Bi-Directional Healthcare Data Exchange Environment between Healthcare Providers and Healthcare Payers, ACOs, MA Plans, and IPAs";
-}
 
 ?>
 
 <section class ="home-hero slider-home">
     <div class="container-fluid">
-<!--        <div class="row">-->
     <div class="home-hero <?php echo $page_class ?>">
         <div id="hero-container" class="hero-video-back">
-            <video class="home-hero-video-back" muted loop autoplay playsinline>
-                <source src="/wp-content/themes/interopx/assets/video/<?php echo $video; ?>" type="video/mp4; codec='hvcl">
-            </video>
+            <div class="video-container">
+                <video class="home-hero-video-back" muted loop autoplay playsinline>
+                    <source src="/wp-content/themes/interopx/assets/video/<?php echo $video; ?>" type="video/mp4; codec='hvcl">
+                </video>
+            </div>
             <div class="hero-content-container">
                 <div class="hero-content">
                     <h1><?php echo $page_title; ?></h1>
-<!--                    <hr class = "line">-->
                     <span class="hero-text"><?php echo $subtitle; ?></span>
                 </div>
-
                 <div class="hero-content-bottom">
-                    <?php if ($show_button and $page_class == "frontpage") { ?>
                      <p class="box-button">
                          <button id="show-video-btn" class="btn" >Watch a Short Video</button>
                      </p>
-                    <?php } ?>
-                    <?php if ($show_button and $page_class == "products") { ?>
-                    <a href="/products/#automated"><button class="btn"><?php echo "Learn How"; ?></button></a>
-                    <?php } ?>
                 </div>
-
             </div>
         </div>
         <div id="hero-video" class="hero-video">
