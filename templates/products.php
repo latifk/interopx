@@ -23,8 +23,12 @@ $subtitle = "Seamless Payer-Providers, Payer-Payer, Payer-Patients, Payer to Par
                 </div>
                 <div class="hero-content-container">
                     <div class="hero-content">
-                        <h1><?php echo $page_title; ?></h1>
-                        <span class="hero-text"><?php echo $subtitle; ?></span>
+                        <div cladd="heto-title">
+                            <h1><?php echo $page_title; ?></h1>
+                        </div>
+                        <div cladd="heto-subtitle">
+                            <span class="hero-text"><?php echo $subtitle; ?></span>
+                        </div>
                     </div>
                     <div class="hero-content-bottom">
                         <a href="/products/#automated"><button class="btn"><?php echo "Learn How"; ?></button></a>

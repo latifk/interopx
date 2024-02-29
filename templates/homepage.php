@@ -9,7 +9,6 @@ get_header();
     $show_button = true;
     $page_title = "'Always Up to Date’ and ‘Always Available’ Clinical Encounter Data for Healthcare Organizations";
     $subtitle = "Create Real-World Interoperable and Bi-Directional Healthcare Data Exchange Environment between Healthcare Providers and Healthcare Payers, ACOs, MA Plans, and IPAs";
-
 ?>
 
 <section class ="home-hero slider-home">
@@ -23,8 +22,12 @@ get_header();
             </div>
             <div class="hero-content-container">
                 <div class="hero-content">
-                    <h1><?php echo $page_title; ?></h1>
-                    <span class="hero-text"><?php echo $subtitle; ?></span>
+                    <div cladd="heto-title">
+                        <h1><?php echo $page_title; ?></h1>
+                    </div>
+                    <div cladd="heto-subtitle">
+                        <span class="hero-text"><?php echo $subtitle; ?></span>
+                    </div>
                 </div>
                 <div class="hero-content-bottom">
                      <p class="box-button">
