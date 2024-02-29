@@ -1403,6 +1403,14 @@ div#testing {
 }
 
 @media screen and (max-width: 1240px) and (min-width: 742px)  {
+    section.boxes {
+        margin: 12rem 0;
+    }
+
+    #show-video-btn {
+        margin-top: -10px;
+    }
+
     .hero-content {
         top: 35%;
         width: 60%;
@@ -1436,6 +1444,9 @@ div#testing {
     /*    top: 100%;*/
     /*    left: 0;*/
     /*}*/
+    a.navbar-brand img {
+        height: 110px;
+    }
 
     section.boxes {
         margin: 5rem 0;
@@ -1456,7 +1467,7 @@ div#testing {
 
     .hero-content {
         position: absolute;
-        top: 15%;
+        top: 5%;
         left: 5%;
         transform: none;
         padding: 10px;
@@ -1536,7 +1547,7 @@ div#testing {
     }
 
     section.slider-home button {
-        width: 100%;
+        width: 300px;
         margin-top: -60%;
     }
 
