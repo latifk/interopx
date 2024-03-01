@@ -89,20 +89,19 @@ get_header();
         <div class="row">
 			<?php foreach(get_field('boxes') as $box) { ?>
           <div class="col-12 card" id="<?php echo $box['scroll_id']; ?>">
+            <?php if( $box['image']) { ?>
             <div class="card-image">
-            <figure>
-              <img
-                src="<?php echo $box['image']; ?>"
-                alt=""
-              />
-            </figure>
+                <figure><img src="<?php echo $box['image']; ?>" alt=""/></figure>
             </div>
+            <?php } ?>
             <div class="card-content">
             <h2><?php echo $box['title']; ?></h2>
             <p><?php echo $box['description']; ?></p>
+            <?php if( $box['button_label']) { ?>
             <p class="box-button">
               <a href="<?php echo $box['button_url']; ?>"><?php echo $box['button_label']; ?></a>
             </p>
+            <?php } ?>
             </div>
           </div>
 			<?php } ?>

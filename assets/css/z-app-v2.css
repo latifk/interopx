@@ -98,11 +98,12 @@ a.dropdown-item {
 a.dropdown-item:hover {
     color: #2b99f3 !important;
     background: none;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .menu-wrapper {
-    background: #f7f7ffa1;
+    /*background: #f7f7ffa1;*/
+    background: #fff;
     font-size: 13px;
     border-radius: 10px;
     padding: 1rem 0;
@@ -1403,6 +1404,21 @@ div#testing {
     font-weight: 100;
 }
 
+div#video {
+    /*background: black;*/
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+#video .card-content {
+    /*height: 50vh;*/
+    width: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50% );
+}
+
 @media screen and (max-width: 1240px) and (min-width: 742px)  {
     section.boxes {
         margin: 12rem 0;
@@ -1436,10 +1452,13 @@ div#testing {
     section.slider-home {
         height: 400px;
     }
+
+    ul.navbar-nav {
+        gap: 0;
+    }
 }
 
 @media screen and (max-width: 767px) {
-
     /*.video-container {*/
     /*    position: absolute;*/
     /*    top: 100%;*/
