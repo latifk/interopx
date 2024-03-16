@@ -1711,3 +1711,44 @@ footer .form-button {
         align-items: center;
     }
 }
+
+/* Pagination container */
+.pagination {
+    margin: auto;
+    width: auto;
+    padding: 10px;
+}
+
+.post-date {
+    padding-bottom: 10px;
+    font-style: italic;
+}
+
+/* Pagination links */
+.pagination .page-numbers,
+.pagination .prev,
+.pagination .next {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 2px; /* Adjust margin for spacing */
+    border: 1px solid #ccc;
+    border-radius: 0; /* Remove border radius */
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Current page link */
+.pagination .page-numbers.current {
+    background-color: #2b99f3;
+    color: #fff;
+    border-color: #2b99f3;
+}
+
+/* Disabled previous and next links */
+.pagination .prev.disabled,
+.pagination .next.disabled {
+    color: #999;
+    border-color: #999;
+    pointer-events: none;
+}

@@ -22,9 +22,16 @@ get_header(); ?>
                 // TO SHOW THE POST CONTENTS
                 ?>
                 <?php
+
+                // Define your query arguments
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $my_query = new WP_Query(); // I used a category id 1 as an example
-                $my_query->query('posts_per_page=5&category_name=events' . '&paged='.$paged);
+                $args = array(
+                    'category_name' => 'events', // Adjust post type if needed
+                    'posts_per_page' => 5,
+                    'paged' => $paged
+                );
+                // Instantiate a new query
+                $my_query = new WP_Query($args);
                 ?>
 
                 <?php if ( $my_query->have_posts() ) : ?>
@@ -49,26 +56,33 @@ get_header(); ?>
 
                         <h2><a href="<?php the_permalink(); ?>" title="Read more"><?php the_title(); ?></a></h2>
                         <?php echo the_excerpt(); ?>
+
+                        <div class="post-date">
+                        <?php
+                        $post_date = get_post_datetime(get_the_ID());
+                        echo $post_date->format('F j, Y');
+                        ?>
+                        </div>
                     </div>
-                <?php endwhile; //resetting the post loop?>
+                <?php endwhile; ?>
+
+                <div class="pagination">
+                    <?php // Pagination
+                    echo paginate_links(array(
+                    'total' => $my_query->max_num_pages
+                    ));
+                    ?>
+                </div>
+
                 <?php
-                    wp_reset_postdata(); //resetting the post query
-                endif;
-                ?>
-                <?php if ($paged > 1) { ?>
+                // Restore original post data
+                wp_reset_postdata(); //resetting the post query
 
-                    <nav id="nav-posts">
-                        <div class="prev"><?php next_posts_link('« Previous Posts'); ?></div>
-                        <div class="next"><?php previous_posts_link('Newer Posts »'); ?></div>
-                    </nav>
-
-                <?php } else { ?>
-
-                    <nav id="nav-posts">
-                        <div class="prev"><?php next_posts_link('« Previous Posts'); ?></div>
-                    </nav>
-
-                <?php } ?>
+                else : ?>
+                    <div class="col-12 card-light no-posts-found">
+                        <?php echo 'No posts found'; // If no posts found ?>
+                    </div>
+                <?php endif; ?>
 
             </div>
         </div>
