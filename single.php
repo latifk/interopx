@@ -20,14 +20,14 @@ get_header();
 
                 $image_url = wp_get_attachment_url( get_post_thumbnail_id() ); // Your image URL
 
-                        // Get the path from the URL
-                        $image_path = parse_url($image_url, PHP_URL_PATH);
+                // Get the path from the URL
+                $image_path = parse_url($image_url, PHP_URL_PATH);
 
-                        // Construct the full path to the image file
-                        $full_image_path = $_SERVER['DOCUMENT_ROOT'] . $image_path;
+                // Construct the full path to the image file
+                $full_image_path = $_SERVER['DOCUMENT_ROOT'] . $image_path;
 
                 // Display the post featured image if it exists.
-                if ( has_post_thumbnail() && file_exists($full_image_path)) { ?>) :?>
+                if ( has_post_thumbnail() && file_exists($full_image_path)) { ?>
                     <div class="post-thumbnail">
                         <?php the_post_thumbnail(); ?>
                     </div>
