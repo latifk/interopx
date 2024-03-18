@@ -254,6 +254,7 @@ section.boxes h2 {
 
 section.boxes p {
     font-size: 16px;
+    padding-top: 20px;
 }
 
 section.boxes p.box-button {
@@ -1760,7 +1761,7 @@ footer .form-button {
     height: auto; /* Maintain aspect ratio */
     max-height: 400px; /* Set a maximum height for the image */
     object-fit: cover; /* Ensure the image covers the container */
-    margin-bottom: 20px; /* Add space below the image */
+    /*margin-bottom: 20px; !* Add space below the image *!*/
 }
 
 /* Container for Featured Image */
@@ -1849,4 +1850,8 @@ section .post h1 {
 section.post-boxes {
     margin: 2rem 0;
     margin-bottom: 2rem;
+}
+
+.news section.boxes .col-12 {
+    padding: 5px 3rem!important;
 }

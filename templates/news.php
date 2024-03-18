@@ -18,6 +18,7 @@ get_header(); ?>
     <section class="boxes light-bg">
         <div class="container">
             <div class="row">
+<!--                <div class="col-md-8">-->
                 <?php
                 // TO SHOW THE POST CONTENTS
                 ?>
@@ -83,7 +84,17 @@ get_header(); ?>
                         <?php echo 'No posts found'; // If no posts found ?>
                     </div>
                 <?php endif; ?>
-
+<!--                </div>-->
+<!--                <div class="col-md-4">-->
+<!--                    <aside class="sidebar">-->
+<!--                        <h2>Resources</h2>-->
+<!--                        <ul>-->
+<!--                            <li>Sidebar Item 1</li>-->
+<!--                            <li>Sidebar Item 2</li>-->
+<!--                            <li>Sidebar Item 3</li>-->
+<!--                        </ul>-->
+<!--                    </aside>-->
+<!--                </div>-->
             </div>
         </div>
     </section>

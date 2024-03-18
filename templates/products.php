@@ -47,25 +47,68 @@ $subtitle = "Seamless Payer-Providers, Payer-Payer, Payer-Patients, Payer to Par
     <section class="boxes">
       <div class="container">
         <div class="row">
-			<?php foreach(get_field('boxes') as $box) { ?>
-          <div class="col-12 card" id="<?php echo $box['scroll_id']; ?>">
-            <div class="card-image">
-            <figure>
-              <img
-                src="<?php echo $box['image']; ?>"
-                alt=""
-              />
-            </figure>
-            </div>
-            <div class="card-content">
-            <h2><?php echo $box['title']; ?></h2>
-            <p><?php echo $box['description']; ?></p>
-            <p class="box-button">
-              <a href="<?php echo $box['button_url']; ?>"><?php echo $box['button_label']; ?></a>
-            </p>
-            </div>
-          </div>
-			<?php } ?>
+<!--			--><?php //foreach(get_field('boxes') as $box) { ?>
+<!--          <div class="col-12 card" id="--><?php //echo $box['scroll_id']; ?><!--">-->
+<!--            <div class="card-image">-->
+<!--            <figure>-->
+<!--              <img-->
+<!--                src="--><?php //echo $box['image']; ?><!--"-->
+<!--                alt=""-->
+<!--              />-->
+<!--            </figure>-->
+<!--            </div>-->
+<!--            <div class="card-content">-->
+<!--            <h2>--><?php //echo $box['title']; ?><!--</h2>-->
+<!--            <p>--><?php //echo $box['description']; ?><!--</p>-->
+<!--            <p class="box-button">-->
+<!--              <a href="--><?php //echo $box['button_url']; ?><!--">--><?php //echo $box['button_label']; ?><!--</a>-->
+<!--            </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--			--><?php //} ?>
+
+            <?php
+            // The Query
+            $args = array(
+                'post_type' => 'product', // Replace 'your_custom_post_type' with the name of your custom post type
+                'posts_per_page' => -1, // Set the number of posts you want to retrieve. Use -1 to retrieve all posts.
+                'order' => 'ASC' // Order posts in ascending order
+            );
+            $query = new WP_Query( $args );
+
+            // The Loop
+            if ( $query->have_posts() ) {
+                while ( $query->have_posts() ) {
+                    $query->the_post();
+                    // Output your post content here
+                    foreach (get_field('boxes') as $box) {
+                        ?>
+                    <div class="col-12 card" id="<?php echo $box['scroll_id']; ?>">
+                        <div class="card-image">
+                            <figure>
+                                <img
+                                        src="<?php echo $box['image']; ?>"
+                                        alt=""
+                                />
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h2><?php echo $box['title']; ?></h2>
+                            <p><?php echo $box['description']; ?></p>
+                            <p class="box-button">
+                                <a href="<?php echo $box['button_url']; ?>"><?php echo $box['button_label']; ?></a>
+                            </p>
+                        </div>
+                    </div>
+                    <?php
+                    }
+                }
+                /* Restore original Post Data */
+                wp_reset_postdata();
+            } else {
+                // no posts found
+            }
+            ?>
         </div>
       </div>
     </section>
