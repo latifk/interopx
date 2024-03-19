@@ -4,34 +4,29 @@
  * Template name: Homepage
  */
 get_header();
-    $page_class = "frontpage";
-    $video = 'Interop_landing_page.mp4';
-    $show_button = true;
-    $page_title = "'Always Up to Date’ and ‘Always Available’ Clinical Encounter Data for Healthcare Organizations";
-    $subtitle = "Create Real-World Interoperable and Bi-Directional Healthcare Data Exchange Environment between Healthcare Providers and Healthcare Payers, ACOs, MA Plans, and IPAs";
 ?>
 
 <section class ="home-hero slider-home">
     <div class="container-fluid">
-    <div class="home-hero <?php echo $page_class ?>">
+    <div class="home-hero frontpage">
         <div id="hero-container" class="hero-video-back">
             <div class="video-container">
                 <video class="home-hero-video-back" muted loop autoplay playsinline>
-                    <source src="/wp-content/themes/interopx/assets/video/<?php echo $video; ?>" type="video/mp4; codec='hvcl">
+                    <source src="<?php echo get_field('video'); ?>" type="video/mp4; codec='hvcl">
                 </video>
             </div>
             <div class="hero-content-container">
                 <div class="hero-content">
-                    <div cladd="heto-title">
-                        <h1><?php echo $page_title; ?></h1>
+                    <div class="heto-title">
+                        <h1><?php echo get_field('hero_title'); ?></h1>
                     </div>
-                    <div cladd="heto-subtitle">
-                        <span class="hero-text"><?php echo $subtitle; ?></span>
+                    <div class="heto-subtitle">
+                        <span class="hero-text"><?php echo get_field('hero_subtitle'); ?></span>
                     </div>
                 </div>
                 <div class="hero-content-bottom">
                      <p class="box-button">
-                         <button id="show-video-btn" class="btn" >Watch a Short Video</button>
+                         <button id="show-video-btn" class="btn" ><?php echo get_field('hero_button_text'); ?></button>
                      </p>
                 </div>
             </div>

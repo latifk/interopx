@@ -6,15 +6,15 @@
 get_header(); ?>
 
 
-<section class="hero-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h1 class="text-center"><?php echo the_title(); ?></h1>
-          </div>
-        </div>
-      </div>
-    </section>
+<!--    <section class="hero-section">-->
+<!--      <div class="container">-->
+<!--        <div class="row">-->
+<!--          <div class="col-12">-->
+<!--            <h1 class="text-center">--><?php //echo the_title(); ?><!--</h1>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
     <section class="solutions-hero">
         <figure style="background: white">
             <?php require_once(get_template_directory() . '/assets/images/solutions-animation.svg'); ?>
@@ -46,7 +46,7 @@ $args = array(
                     <section class="solutions-1">
                         <div class="container">
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12" id="<?php echo $box['scroll_id']; ?>">
                                     <h1><?php echo strtoupper($box['title']); ?></h1>
                                     <p>
                                         <?php echo $box['description']; ?>
@@ -97,7 +97,7 @@ $args = array(
             // Output your post content here
             foreach (get_field('boxes') as $box2) {
          ?>
-                    <div class="col-12 card-light">
+                    <div class="col-12 card-light" id="<?php echo $box2['scroll_id']; ?>">
                         <?php if( $box2['image']) { ?>
                             <figure>
                                 <img

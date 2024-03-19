@@ -70,36 +70,5 @@ if ( $query->have_posts() ) {
     // no posts found
 }
 ?>
-<!--    <section class="boxes light-bg">-->
-<!--      <div class="container">-->
-<!--        <div class="row">-->
-<!--          --><?php //foreach(get_field('boxes') as $box) { ?>
-<!--          <div class="col-12 card-light">-->
-<!--            <figure>-->
-<!--              <img-->
-<!--                src="--><?php //echo $box['image']; ?><!--"-->
-<!--                alt=""-->
-<!--              />-->
-<!--            </figure>-->
-<!--            <h2>--><?php //echo $box['title']; ?><!--</h2>-->
-<!--            --><?php //echo $box['description']; ?>
-<!--            <p class="box-button --><?php //echo (count($box['buttons']) >=2 ? 'double-btn' : ''); ?><!--">-->
-<!--<!--			  -->--><?php ////foreach($box['buttons'] as $button) { ?>
-<!--<!--              <a href="-->--><?php ////echo $button['url']; ?><!--<!--" style="color: inherit">-->--><?php ////echo $button['label']; ?><!--<!--</a>-->-->
-<!--<!--			  -->--><?php ////} ?>
-<!---->
-<!--                --><?php //foreach($box['buttons'] as $button) { ?>
-<!--                    --><?php //if(stristr($button['url'], "interopx.com") || strpos($button['url'],"/") == '0') {  ?>
-<!--                        <a href="--><?php //echo $button['url']; ?><!--" style="color: inherit">--><?php //echo $button['label']; ?><!--</a>-->
-<!--                    --><?php //} else { ?>
-<!--                        <a href="--><?php //echo $button['url']; ?><!--" target="_BLANK" style="color: inherit">--><?php //echo $button['label']; ?><!--</a>-->
-<!--                    --><?php //} ?>
-<!--                --><?php //} ?>
-<!--            </p>-->
-<!--          </div>-->
-<!--			--><?php //} ?>
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
 
 <?php get_footer(); ?>
