@@ -1495,6 +1495,38 @@ div#video {
     /*    top: 100%;*/
     /*    left: 0;*/
     /*}*/
+    section.slider-home {
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+    }
+
+    section.slider-home {
+        display: flex;
+        background-size: cover;
+        background: #12192a no-repeat bottom;
+        position: relative;
+        padding-top: 2rem;
+    }
+
+    .products .hero-content-bottom {
+        bottom: 25% !important;
+    }
+
+    .frontpage .hero-content-bottom {
+        bottom: 15% !important;
+    }
+
+    #show-video-btn {
+        padding: 12px 20px;
+        width: 200px;
+    }
+
+    section.slider-home button {
+        margin-top: 0 !important;
+        margin-bottom: 25%;
+        width: 200px;
+    }
+
     li.nav-item:hover:after {
         content: "";
         background: none;
@@ -1549,7 +1581,7 @@ div#video {
 
     ul.navbar-nav {
         gap: 0;
-        margin: 2rem 0;
+        margin: 1rem 0;
     }
 
     .dropdown-menu {
@@ -1582,7 +1614,7 @@ div#video {
 
 
     section.slider-home {
-        height: 475px;
+        height: 600px;
     }
 
     .swiper-slide {
@@ -1602,10 +1634,10 @@ div#video {
         width: 100%;
     }
 
-    section.slider-home button {
-        width: 300px;
-        margin-top: -60%;
-    }
+    /*section.slider-home button {*/
+    /*    width: 300px;*/
+    /*    margin-top: -60%;*/
+    /*}*/
 
     .solutions-hero svg {
         height: auto;
