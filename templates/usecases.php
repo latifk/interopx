@@ -47,7 +47,7 @@ $args = array(
                         <div class="container">
                             <div class="row">
                                 <div class="col-12" id="<?php echo $box['scroll_id']; ?>">
-                                    <h1><?php echo strtoupper($box['title']); ?></h1>
+                                    <h1><?php echo ucwords(strtolower($box['title'])); ?></h1>
                                     <p>
                                         <?php echo $box['description']; ?>
                                     </p>

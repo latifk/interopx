@@ -24,17 +24,19 @@ get_header();
                         <span class="hero-text"><?php echo get_field('hero_subtitle'); ?></span>
                     </div>
                 </div>
+                <?php if ( get_field('hero_button_video') ) { ?>
                 <div class="hero-content-bottom">
                      <p class="box-button">
                          <button id="show-video-btn" class="btn" ><?php echo get_field('hero_button_text'); ?></button>
                      </p>
                 </div>
+                <?php } ?>
             </div>
         </div>
         <div id="hero-video" class="hero-video">
             <span id="close-btn">&times;</span>
             <video id="video" controls class="home-hero-video">
-                <source src="/wp-content/uploads/2024/02/iX-DataBridge_V1.mp4" type="video/mp4; codec='hvcl">
+                <source src="<?php echo get_field('hero_button_video'); ?>" type="video/mp4; codec='hvcl">
             </video>
         </div>
     </div>

@@ -21,7 +21,7 @@ get_header(); ?>
 $args = array(
     'post_type' => 'insight', // Replace 'your_custom_post_type' with the name of your custom post type
     'posts_per_page' => -1, // Set the number of posts you want to retrieve. Use -1 to retrieve all posts.
-    'order' => 'ASC'
+    'order' => 'DESC'
 );
 $query = new WP_Query( $args );
 
@@ -38,14 +38,17 @@ if ( $query->have_posts() ) {
                     // Output your post content here
                     foreach (get_field('boxes') as $box) {
                         ?>
-                        <div class="col-12 card-light">
+                        <div class="col-12 card card-light">
                             <?php if( $box['image']) { ?>
+                            <div class="card-image">
                                 <figure>
                                     <img
                                             src="<?php echo $box['image']; ?>"
                                             alt=""
                                     />
                                 </figure>
+                            </div>
+                            <div class="card-content">
                             <?php } ?>
                             <h2><?php echo $box['title']; ?></h2>
                             <?php echo $box['description']; ?>
@@ -54,6 +57,7 @@ if ( $query->have_posts() ) {
                                     <a href="<?php echo $button['url']; ?>" style="color: inherit"><?php echo $button['label']; ?></a>
                                 <?php } ?>
                             </p>
+                            </div>
                         </div>
                         <?php
                     }

@@ -31,7 +31,7 @@ get_header(); ?>
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h2 class="title">MESSAGE US</h2>
+            <h2 class="title">Message Us</h2>
             <form class="contact-page-form">
               <div class="row">
                 <div class="col-6">

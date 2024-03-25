@@ -27,7 +27,7 @@ get_header(); ?>
                   alt=""
                 />
               </figure>
-              <h2 class="title"><?php echo $box['title']; ?></h2>
+              <h2 class="title"><?php echo ucwords(strtolower($box['title'])); ?></h2>
               <p>
                 <?php echo $box['description']; ?>
               </p>
@@ -53,7 +53,7 @@ get_header(); ?>
                 </a>
               </figure>
               <div class="person-info">
-                <h3><?php echo $member['name']; ?></h3>
+                <h3><?php echo ucwords(strtolower($member['name'])); ?></h3>
                 <p><?php echo $member['position']; ?></p>
                 <p class="description">
                   <?php echo $member['description']; ?>
@@ -80,7 +80,7 @@ get_header(); ?>
               <figure>
                 <img src="<?php echo $card['icon']; ?>" alt="" />
               </figure>
-              <h3><?php echo $card['title']; ?></h3>
+              <h3><?php echo ucwords(strtolower($card['title'])); ?></h3>
               <p>
                 <?php echo $card['description']; ?>
               </p>
@@ -96,7 +96,7 @@ get_header(); ?>
         <div class="row">
           <div class="col-12">
             <h2 class="title">
-              <?php echo the_field('title_bottom'); ?>
+              <?php echo ucwords(strtolower(the_field('title_bottom'))); ?>
             </h2>
             <ul>
 			  <?php foreach(get_field('bullets_bottom') as $bullet) { ?>
