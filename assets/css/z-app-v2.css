@@ -106,7 +106,8 @@ ul.dropdown-menu.show {
 a.dropdown-item {
     font-size: 18px !important;
     padding-bottom: 8px;
-    width: 300px;
+    max-width: 300px;
+    min-width: 250px;
     text-wrap: wrap;
     padding-right: 40px;
 }
@@ -114,12 +115,11 @@ a.dropdown-item {
 a.dropdown-item:hover {
     color: #2b99f3 !important;
     background: none;
-    /*font-weight: bold;*/
 }
 
 .menu-wrapper {
-    /*background: #f7f7ffa1;*/
-    background: #fff;
+    background: #f7f7ffa1;
+    /*background: #fff;*/
     font-size: 13px;
     border-radius: 10px;
     padding: 1rem 0;
