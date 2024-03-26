@@ -1447,6 +1447,11 @@ div#video {
     --bs-gutter-x: 0;
 }
 
+section.hero-about {
+    background-position: right top;
+    /*height: 230px;*/
+}
+
 @media screen and (max-width: 1200px) and (min-width: 742px)  {
     section.boxes {
         margin: 12rem 0;
