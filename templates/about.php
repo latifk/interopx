@@ -44,7 +44,7 @@ get_header(); ?>
         </div>
         <div class="row">
 		  <?php foreach(get_field('team_members') as $member) { ?>
-          <div class="col-6">
+          <div class="col-4">
             <div class="leadership-box card-light">
               <figure>
                 <img src="<?php echo $member['image']; ?>" alt="" />

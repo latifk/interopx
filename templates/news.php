@@ -50,11 +50,13 @@ get_header(); ?>
 
                         // Check if the file exists
                         if ( has_post_thumbnail() && file_exists($full_image_path)) { ?>
+                        <div class="card-image">
                         <figure>
                             <?php echo get_the_post_thumbnail(); ?>
                         </figure>
+                        </div>
                         <?php } ?>
-
+                        <div class="card-content">
                         <h2><a href="<?php the_permalink(); ?>" title="Read more"><?php the_title(); ?></a></h2>
                         <?php echo the_excerpt(); ?>
 
@@ -63,6 +65,7 @@ get_header(); ?>
                         $post_date = get_post_datetime(get_the_ID());
                         echo $post_date->format('F j, Y');
                         ?>
+                        </div>
                         </div>
                     </div>
                 <?php endwhile; ?>

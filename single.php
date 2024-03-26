@@ -42,6 +42,8 @@ get_header();
                         the_content();
                         ?>
                     </div>
+                    </div>
+                </div>
                 </section>
                 <?php
                 // If comments are open or we have at least one comment, load up the comment template.

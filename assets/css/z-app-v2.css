@@ -594,7 +594,9 @@ section.leadership h2.title {
     padding: 2rem 0;
 }
 
-
+.leadership-box img {
+    border-radius: 50%;
+}
 
 section.leadership h2.title::after {
     content: "";
@@ -699,7 +701,7 @@ a.person-social-icon {
 .person-info {
     margin: 12rem 0;
     width: 80%;
-    padding: 6rem 2rem 0;
+    padding: 6rem 1rem 0;
 }
 
 .person-info .description {
@@ -1453,6 +1455,10 @@ section.hero-about {
 }
 
 @media screen and (max-width: 1200px) and (min-width: 742px)  {
+    .leadership .col-4 {
+        width: 100%;
+    }
+
     section.boxes {
         margin: 12rem 0;
     }
@@ -1492,14 +1498,13 @@ section.hero-about {
         flex-direction: column-reverse;
         flex-wrap: nowrap;
     }
+
+    .news section.boxes .col-12 {
+        display: grid !important;
+    }
 }
 
 @media screen and (max-width: 767px) {
-    /*.video-container {*/
-    /*    position: absolute;*/
-    /*    top: 100%;*/
-    /*    left: 0;*/
-    /*}*/
     section.slider-home {
         flex-direction: column-reverse;
         flex-wrap: nowrap;
@@ -1528,7 +1533,7 @@ section.hero-about {
 
     section.slider-home button {
         margin-top: 0 !important;
-        margin-bottom: 25%;
+        margin-bottom: 35%;
         width: 200px;
     }
 
@@ -1721,13 +1726,17 @@ section.hero-about {
         width: 100%;
     }
 
+    .leadership .col-4 {
+        width: 100%;
+    }
+
     .person-info {
         margin: 12rem 0 0;
     }
 
     section#capabilities .col-6 {
         width: 100%;
-        margin: 0;
+        /*margin: 0;*/
     }
 
     .capability-box {
@@ -1777,6 +1786,10 @@ footer .form-button {
 
     .footer-socials {
         align-items: center;
+    }
+
+    .news section.boxes .col-12 {
+        display: grid !important;
     }
 }
 
@@ -1916,9 +1929,9 @@ section .post h1 {
 
 section.post-boxes {
     margin: 2rem 0;
-    margin-bottom: 2rem;
 }
 
 .news section.boxes .col-12 {
     padding: 5px 3rem!important;
+    display: flex;
 }
