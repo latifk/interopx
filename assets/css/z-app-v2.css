@@ -232,7 +232,7 @@ section.boxes figure {
 }
 
 section.boxes .col-12 {
-    background: #1e23337d 0% 0% no-repeat padding-box;
+    background: #1e23337d 0 0 no-repeat padding-box;
     border-radius: 30px;
     opacity: 1;
     backdrop-filter: blur(9px);
@@ -1931,7 +1931,102 @@ section.post-boxes {
     margin: 2rem 0;
 }
 
-.news section.boxes .col-12 {
-    padding: 5px 3rem!important;
-    display: flex;
+.featured-news {
+    z-index: 100;
+    position: absolute;
+    background: #1e23337d 0 0 no-repeat padding-box;
+    bottom: -150px;
+    width: 90%;
+    height: auto;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    opacity: .9;
+    backdrop-filter: blur(9px);
+    /*text-align: left;*/
+    border: 2px solid #455475;
+    padding-left: 35px;
+    @media screen and (max-width: 767px) {
+        height: auto;
+        bottom: unset;
+    }
+
+    @media screen and (max-width: 1200px) and (min-width: 742px) {
+        height: auto;
+        bottom: -200px;
+    }
+
+     h2 {
+        font-size: 30px;
+        margin: 2rem 0;
+        color: #ffffff;
+    }
+
+    .col-12.featured-card {
+        display: flex;
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+        }
+
+        @media screen and (max-width: 1200px) and (min-width: 742px) {
+            display: contents;
+        }
+    }
+
+    .featured-card-btn {
+        flex: 0 0 30%;
+        align-self: center;
+        text-align: right;
+        @media screen and (max-width: 767px) {
+            flex: 1;
+        }
+
+        @media screen and (max-width: 1200px) and (min-width: 742px) {
+            flex: 0 0 40%;
+        }
+    }
+
+    .featured-card-content {
+        flex: 0 0 70%;
+        @media screen and (max-width: 767px) {
+            flex: 1;
+        }
+
+        @media screen and (max-width: 1200px) and (min-width: 742px) {
+            flex: 0 0 60%;
+        }
+    }
+}
+
+section.boxes.frontpage-with-featured {
+    margin: 15rem 0;
+    @media screen and (max-width: 767px) {
+        margin: 24rem 0;
+    }
+}
+
+section.boxes.frontpage-no-featured {
+    margin: 5rem 0;
+}
+
+.featured-card p.box-button a {
+    border-radius: unset !important;
+    padding: 10px 50px;
+    color: white !important;
+    width: 50%;
+    margin-top: 1rem;
+    text-decoration: none;
+    font-size: 22px;
+    background: transparent linear-gradient(180deg, #2b99f3 0%, #8125AA 100%) 0% 0% no-repeat padding-box !important;
+}
+
+.featured-card-btn p.box-button {
+    color: white;
+    padding-right: 20px;
+    width: auto;
+}
+
+section.slider-home .featured-card-content p {
+    width: auto;
+    padding-right: 20px;
 }

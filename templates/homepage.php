@@ -40,48 +40,45 @@ get_header();
             </video>
         </div>
     </div>
-    </div>
-<!--    </div>-->
-</section>
-<!--<section class="slider-home">-->
-<!--      <div class="container-fluid">-->
-<!--        <div class="row">-->
-<!--          <div class="swiper">-->
-<!--            <div class="swiper-wrapper">-->
-<!--			--><?php //foreach(get_field('slider') as $key => $slide) { ?>
-<!--              <div class="swiper-slide">-->
-<!--                <div class="col-6">-->
-<!--                  <div class="slider-info">-->
-<!--                    <h1>-->
-<!--                      --><?php //echo $slide['title']; ?>
-<!--                    <p>-->
-<!--                      --><?php //echo $slide['description']; ?>
-<!--                    </p>-->
-<!--                    <a-->
-<!--                      href="--><?php //echo $slide['button_url']; ?><!--"-->
-<!--                      ><button class="btn">--><?php //echo $slide['button_label']; ?><!--</button></a-->
-<!--                    >-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--                <div class="col-6">-->
-<!--                  <figure>-->
-<!--                    --><?php //if($key == 0) {
-//					require_once(get_template_directory() . '/assets/images/home-animation.svg');
-//					} else { ?>
-<!--					  <img src="--><?php //echo $slide['image']; ?><!--" class="img-fluid" />-->
-<!--					  --><?php //} ?>
-<!--                  </figure>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--				--><?php //} ?>
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="swiper-pagination"></div>-->
-<!--    </section>-->
 
-    <section class="boxes">
+    <?php
+        // Specify the post ID you want to retrieve
+        $featured_post_id = get_field('featured_post');
+        if (isset($featured_post_id) && !empty($featured_post_id)) {
+            $box_class = "frontpage-with-featured";
+    ?>
+    <div class="featured-news">
+        <?php
+        // Specify the post ID you want to retrieve
+        $featured_post_id = get_field('featured_post'); // Replace 123 with the actual post ID you want to retrieve
+
+        // Retrieve the post object by its ID
+        $featured_post = get_post($featured_post_id);
+        $post_title = $featured_post->post_title;
+        $post_content = $featured_post->post_content;
+        // Retrieve the value of the "Teaser" custom field
+        $teaser_value = get_post_meta($featured_post_id, '_teaser_key', true);
+        // Get the excerpt of the specified post
+        $post_excerpt = get_the_excerpt($featured_post_id);
+        ?>
+        <div class="col-12 featured-card">
+            <div class="featured-card-content">
+                <h2><?php echo $post_title; ?></h2>
+                <h5><?php echo wpautop($teaser_value); ?></h5>
+            </div>
+            <div class="featured-card-btn">
+                <p class="box-button">
+                    <a href="<?php the_permalink($featured_post_id); ?>">Read More</a>
+                </p>
+            </div>
+        </div>
+        <?php } else {
+            $box_class = "frontpage-no-featured";
+         } ?>
+    </div>
+    </div>
+</section>
+    <section class="boxes <?php echo $box_class; ?>">
       <div class="container">
         <div class="row">
             <?php
