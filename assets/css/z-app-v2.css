@@ -1454,7 +1454,7 @@ section.hero-about {
     /*height: 230px;*/
 }
 
-@media screen and (max-width: 1200px) and (min-width: 742px)  {
+@media screen and (max-width: 1200px) and (min-width: 767px)  {
     .leadership .col-4 {
         width: 100%;
     }
@@ -1948,10 +1948,15 @@ section.post-boxes {
     padding-left: 35px;
     @media screen and (max-width: 767px) {
         height: auto;
-        bottom: unset;
+        bottom: -300px;
     }
 
-    @media screen and (max-width: 1200px) and (min-width: 742px) {
+    @media screen and (max-width: 767px) and (min-width: 498px) {
+        height: auto;
+        bottom: -200px;
+    }
+
+    @media screen and (max-width: 1200px) and (min-width: 767px) {
         height: auto;
         bottom: -200px;
     }
@@ -1968,7 +1973,7 @@ section.post-boxes {
             flex-direction: column;
         }
 
-        @media screen and (max-width: 1200px) and (min-width: 742px) {
+        @media screen and (max-width: 1200px) and (min-width: 767px) {
             display: contents;
         }
     }
@@ -1981,19 +1986,23 @@ section.post-boxes {
             flex: 1;
         }
 
-        @media screen and (max-width: 1200px) and (min-width: 742px) {
+        @media screen and (max-width: 1200px) and (min-width: 767px) {
             flex: 0 0 40%;
         }
     }
 
     .featured-card-content {
         flex: 0 0 70%;
+        padding-bottom: 20px;
+
         @media screen and (max-width: 767px) {
             flex: 1;
+            padding-bottom: 5px;
         }
 
-        @media screen and (max-width: 1200px) and (min-width: 742px) {
+        @media screen and (max-width: 1200px) and (min-width: 767px) {
             flex: 0 0 60%;
+            padding-bottom: 5px;
         }
     }
 }
@@ -2001,7 +2010,7 @@ section.post-boxes {
 section.boxes.frontpage-with-featured {
     margin: 15rem 0;
     @media screen and (max-width: 767px) {
-        margin: 24rem 0;
+        margin: 20rem 0;
     }
 }
 
