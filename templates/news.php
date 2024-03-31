@@ -57,15 +57,18 @@ get_header(); ?>
                         </div>
                         <?php } ?>
                         <div class="card-content">
-                        <h2><a href="<?php the_permalink(); ?>" title="Read more"><?php the_title(); ?></a></h2>
+                        <h2><?php the_title(); ?></h2>
+                            <div class="post-date">
+                                <?php
+                                $post_date = get_post_datetime(get_the_ID());
+                                echo $post_date->format('F j, Y');
+                                ?>
+                            </div>
                         <?php echo the_excerpt(); ?>
+                        <p class="box-button">
+                           <a href="<?php the_permalink(); ?>" style="color: inherit">Read More</a>
+                        </p>
 
-                        <div class="post-date">
-                        <?php
-                        $post_date = get_post_datetime(get_the_ID());
-                        echo $post_date->format('F j, Y');
-                        ?>
-                        </div>
                         </div>
                     </div>
                 <?php endwhile; ?>

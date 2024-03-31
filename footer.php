@@ -44,7 +44,7 @@
             <div class="footer-menu">
 			  <?php foreach(wp_get_menu_array('Main') as $menu) { if(!$menu['children']) continue; ?>
               <ul>
-                 <li><a href="<?php echo $menu['url']; ?>"><?php echo strtoupper($menu['title']); ?></a></li>
+                 <li><a href="<?php echo $menu['url']; ?>"><?php echo $menu['title']; ?></a></li>
 				 <?php foreach($menu['children'] as $child) { ?>
                  <li><a href="<?php echo $child['url']; ?>"><?php echo $child['title']; ?></a></li>
 				 <?php } ?>

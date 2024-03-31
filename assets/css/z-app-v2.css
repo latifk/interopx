@@ -36,6 +36,11 @@ li.nav-item {
     flex-direction: row;
 }
 
+.news .card-light {
+    display: inline-flex;
+    flex-direction: row;
+}
+
 .card-image {
     width: 300px;
 }
@@ -268,9 +273,14 @@ section.boxes h2 {
     margin: 2rem 0;
 }
 
+.news section.boxes h2 {
+    font-size: 36px;
+    margin: 2rem 0 0;
+}
+
 section.boxes p {
     font-size: 16px;
-    padding-top: 20px;
+    /*padding-top: 20px;*/
 }
 
 section.boxes p.box-button {
@@ -691,7 +701,7 @@ a.person-social-icon {
 }
 
 .capability-box p {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .capability-box img {
@@ -965,7 +975,7 @@ section.news-section {
 }
 
 .widget-categories p {
-    font-size: 14px;
+    font-size: 16px;
     border-bottom: 1px dashed #ccc;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -1044,7 +1054,7 @@ section.blog-section .row {
 
 .filter-blog-categories p {
     margin: 0 20px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .filter-blog-categories {
@@ -1059,7 +1069,7 @@ section.blog-section .row {
 }
 
 .blog-box p.meta {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -1070,7 +1080,7 @@ section.blog-section .row {
 }
 
 .blog-box .excerpt {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .filter-active {
@@ -1118,7 +1128,7 @@ section.single-news-section .container {
 
 .single-news-section article .single-date {
     color: #AAAAB8;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .content img {
@@ -1165,7 +1175,7 @@ footer h2::after {
 }
 
 footer .footer-description {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 footer form input {
@@ -1230,8 +1240,11 @@ footer form label {
 }
 
 .footer-menu ul li:first-child {
-    font-size: 16px;
     margin-bottom: 1.5rem;
+    text-transform: capitalize;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .footer-socials p {
@@ -1911,7 +1924,7 @@ footer .form-button {
 /* Comment Date */
 .comment-metadata {
     font-style: italic;
-    font-size: 14px;
+    font-size: 16px;
     color: #888;
 }
 
@@ -1931,6 +1944,7 @@ section.post-boxes {
     margin: 2rem 0;
 }
 
+/* Featured Post css */
 .featured-news {
     z-index: 100;
     position: absolute;
@@ -1941,11 +1955,12 @@ section.post-boxes {
     align-items: center;
     margin-left: 5%;
     margin-right: 5%;
-    opacity: .9;
+    opacity: 1;
     backdrop-filter: blur(9px);
     /*text-align: left;*/
     border: 2px solid #455475;
     padding-left: 35px;
+
     @media screen and (max-width: 767px) {
         height: auto;
         bottom: -300px;
@@ -1959,6 +1974,20 @@ section.post-boxes {
     @media screen and (max-width: 1200px) and (min-width: 767px) {
         height: auto;
         bottom: -200px;
+    }
+
+    @media screen and max-width: 1600px) and (min-width: 1400px) {
+        width: 70%;
+        height: auto;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: 50%;
+        height: auto;
+        margin-left: 25%;
+        margin-right: 25%;
     }
 
      h2 {
@@ -2008,9 +2037,9 @@ section.post-boxes {
 }
 
 section.boxes.frontpage-with-featured {
-    margin: 15rem 0;
+    margin: 15rem 0 5rem;
     @media screen and (max-width: 767px) {
-        margin: 20rem 0;
+        margin: 20rem 0 5rem;
     }
 }
 
