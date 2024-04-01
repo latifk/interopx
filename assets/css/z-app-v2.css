@@ -317,9 +317,34 @@ p.box-button.double-btn a {
     text-align: center;
 }
 
-.hero-section {
+.news .hero-section {
     background: url(/wp-content/themes/interopx/assets/images/resources\ 1.png);
-    height: 510px;
+    height: 340px;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-section {
+    background: url(/wp-content/themes/interopx/assets/images/insights_hero_bg.png);
+    height: 340px;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.resources .hero-section {
+    background: url(/wp-content/themes/interopx/assets/images/insights_hero_bg.png);
+    height: 340px;
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -332,7 +357,6 @@ p.box-button.double-btn a {
 .hero-section h1 {
     color: white;
     font-size: 46px;
-    /*text-transform: uppercase;*/
 }
 
 .hero-section h1:after {
@@ -342,7 +366,6 @@ p.box-button.double-btn a {
     width: 20%;
     position: relative;
     display: block;
-    margin: 0.5rem 0;
     left: 0;
     right: 0;
     margin: 1rem auto;
@@ -379,7 +402,6 @@ p.box-button.double-btn a {
     width: 20%;
     position: relative;
     display: block;
-    margin: 0.5rem 0;
     left: 0;
     right: 0;
     margin: 1rem 0;
@@ -497,7 +519,6 @@ section.standard-boxes h2.main-title::after {
     width: 10%;
     position: relative;
     display: block;
-    margin: 1rem 0;
     left: 0;
     margin: 2rem 0;
 }
@@ -536,20 +557,17 @@ section.standard-boxes .box .box-hero-image {
 }
 
 section.hero-about {
-    /*background: url(/wp-content/themes/interopx/assets/images/standards\ 1.png);*/
     background: url(/wp-content/themes/interopx/assets/images/about.png);
     background-size: cover;
     background-position: center;
-    height: 510px;
+    height: 340px;
     display: flex;
     align-items: center;
 }
 
 section.hero-about h1 {
-    /*color: #fff;*/
     color: #000;
     font-size: 46px;
-    /*text-transform: uppercase;*/
     text-align: center;
 }
 
@@ -560,7 +578,6 @@ section.hero-about h1::after {
     width: 10%;
     position: relative;
     display: block;
-    margin: 0.5rem 0;
     left: 0;
     right: 0;
     margin: 1rem auto;
@@ -748,14 +765,23 @@ section.about-last li {
 }
 
 
+/*section.contact-hero {*/
+/*    background: url(/wp-content/themes/interopx/assets/images/contact-bg.png);*/
+/*    background-size: cover;*/
+/*    background-position: top;*/
+/*    height: 510px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
 section.contact-hero {
-    background: url(/wp-content/themes/interopx/assets/images/contact-bg.png);
-    background-size: cover;
-    background-position: top;
-    height: 510px;
+    height: 340px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover !important;
+    background: url(/wp-content/themes/interopx/assets/images/contact-bg.png) no-repeat bottom;
 }
 
 section.contact-hero h1 {
@@ -783,6 +809,7 @@ section.contact-hero h1::after {
     align-items: center;
     justify-content: center;
     color: white;
+    margin-bottom: 20px;
 }
 
 .quick-contact p {
@@ -1464,7 +1491,6 @@ div#video {
 
 section.hero-about {
     background-position: right top;
-    /*height: 230px;*/
 }
 
 @media screen and (max-width: 1200px) and (min-width: 767px)  {
@@ -1950,11 +1976,11 @@ section.post-boxes {
     position: absolute;
     background: #1e23337d 0 0 no-repeat padding-box;
     bottom: -150px;
-    width: 90%;
+    width: 80%;
     height: auto;
     align-items: center;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
     opacity: 1;
     backdrop-filter: blur(9px);
     /*text-align: left;*/
@@ -1964,6 +1990,9 @@ section.post-boxes {
     @media screen and (max-width: 767px) {
         height: auto;
         bottom: -300px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     @media screen and (max-width: 767px) and (min-width: 498px) {
