@@ -560,7 +560,7 @@ section.hero-about {
     background: url(/wp-content/themes/interopx/assets/images/about.png);
     background-size: cover;
     background-position: center;
-    height: 340px;
+    height: 510px;
     display: flex;
     align-items: center;
 }
@@ -593,6 +593,11 @@ section.about-section-1 .mission-vission-box {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 2rem;
+    height: 100% !important;
+
+    @media screen and (max-width: 767px) {
+        height: auto !important;;
+    }
 }
 
 section.about-section-1 .mission-vission-box img {
@@ -1976,11 +1981,11 @@ section.post-boxes {
     position: absolute;
     background: #1e23337d 0 0 no-repeat padding-box;
     bottom: -150px;
-    width: 80%;
+    width: 90%;
     height: auto;
     align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     opacity: 1;
     backdrop-filter: blur(9px);
     /*text-align: left;*/
@@ -1989,7 +1994,7 @@ section.post-boxes {
 
     @media screen and (max-width: 767px) {
         height: auto;
-        bottom: -300px;
+        bottom: -2530px;
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
@@ -1997,7 +2002,7 @@ section.post-boxes {
 
     @media screen and (max-width: 767px) and (min-width: 498px) {
         height: auto;
-        bottom: -200px;
+        bottom: -250px;
     }
 
     @media screen and (max-width: 1200px) and (min-width: 767px) {
@@ -2006,17 +2011,21 @@ section.post-boxes {
     }
 
     @media screen and max-width: 1600px) and (min-width: 1400px) {
-        width: 70%;
+        width: 80%;
         height: auto;
-        margin-left: 15%;
-        margin-right: 15%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 
     @media screen and (min-width: 1600px) {
-        width: 50%;
+        /*width: 50%;*/
+        /*height: auto;*/
+        /*margin-left: 25%;*/
+        /*margin-right: 25%;*/
+        width: 80%;
         height: auto;
-        margin-left: 25%;
-        margin-right: 25%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 
      h2 {
@@ -2096,4 +2105,8 @@ section.boxes.frontpage-no-featured {
 section.slider-home .featured-card-content p {
     width: auto;
     padding-right: 20px;
+}
+
+section.post-boxes .card-light {
+    padding-top: 20px;
 }
