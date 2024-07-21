@@ -4,8 +4,78 @@
  * Template name: Homepage
  */
 get_header();
+$image = 1;
 ?>
+<?php if($image == 1) {   ?>
+    <section class="slider-home hero-image">
+          <div class="container-fluid">
+            <div class="row2">
+                    <div class="swiper-wrapper homepage"
+                         style="background-image: url('/wp-content/uploads/2024/07/homepage.png');" >
+                  <div class="swiper-slide">
+                    <div class="col-12">
+                      <div class="slider-info">
+                        <h1><?php echo get_field('hero_title'); ?></h1>
+                        <p>
+                          <?php echo get_field('hero_subtitle'); ?>
+                        </p>
 
+                      </div>
+                      <?php if ( get_field('hero_button_video') ) { ?>
+                          <div class="hero-content-bottom">
+                              <p class="box-button">
+                                  <button id="show-video-btn" class="btn" ><?php echo get_field('hero_button_text'); ?></button>
+                              </p>
+                          </div>
+                     <?php } ?>
+                      <div id="hero-video" class="hero-video">-->
+                          <span id="close-btn">&times;</span>
+                          <video id="video" controls class="home-hero-video">
+                             <source src="<?php echo get_field('hero_button_video'); ?>" type="video/mp4; codec='hvcl">
+                         </video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+        <?php
+        // Specify the post ID you want to retrieve
+        $featured_post_id = get_field('featured_post');
+        if (isset($featured_post_id) && !empty($featured_post_id)) {
+        $box_class = "frontpage-with-featured";
+        ?>
+        <div class="featured-news">
+            <?php
+            // Specify the post ID you want to retrieve
+            $featured_post_id = get_field('featured_post'); // Replace 123 with the actual post ID you want to retrieve
+
+            // Retrieve the post object by its ID
+            $featured_post = get_post($featured_post_id);
+            $post_title = $featured_post->post_title;
+            $post_content = $featured_post->post_content;
+            // Retrieve the value of the "Teaser" custom field
+            $teaser_value = get_post_meta($featured_post_id, '_teaser_key', true);
+            // Get the excerpt of the specified post
+            $post_excerpt = get_the_excerpt($featured_post_id);
+            ?>
+            <div class="col-12 featured-card">
+                <div class="featured-card-content">
+                    <h2><?php echo $post_title; ?></h2>
+                    <h5><?php echo wpautop($teaser_value); ?></h5>
+                </div>
+                <div class="featured-card-btn">
+                    <p class="box-button">
+                        <a href="<?php the_permalink($featured_post_id); ?>">Read More</a>
+                    </p>
+                </div>
+            </div>
+            <?php } else {
+                $box_class = "frontpage-no-featured";
+            } ?>
+        </div>
+        </div>
+        </section>
+<?php } else { ?>
 <section class ="home-hero slider-home">
     <div class="container-fluid">
     <div class="home-hero frontpage">
@@ -78,6 +148,7 @@ get_header();
     </div>
     </div>
 </section>
+<?php }  ?>
     <section class="boxes <?php echo $box_class; ?>">
       <div class="container">
         <div class="row">

@@ -4,9 +4,33 @@
  * Template name: Products
  */
 get_header();
-
+$image = 1;
 ?>
+<?php if($image == 1) {   ?>
+    <section class="slider-home hero-image">
+        <div class="container-fluid">
+            <div class="row2">
+                <div class="swiper-wrapper homepage product-page"
+                     style="background-image: url('/wp-content/uploads/2024/07/products.jpg');" >
+                    <div class="swiper-slide">
+                        <div class="col-12">
+                            <div class="slider-info product">
+                                <h1><?php echo get_field('hero_title'); ?></h1>
+                                <p>
+                                    <?php echo get_field('hero_subtitle'); ?>
+                                </p>
 
+                            </div>
+                            <div class="hero-content-bottom product-btn">
+                                <a href="<?php echo get_field('hero_button_url'); ?>"><button class="btn"><?php echo get_field('hero_button_text'); ?></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+<?php } else { ?>
     <section class ="home-hero slider-home">
         <div class="container-fluid">
         <div class="home-hero products">
@@ -39,6 +63,7 @@ get_header();
         </div>
         </div>
     </section>
+<?php } ?>
     <section class="boxes">
       <div class="container">
         <div class="row">
