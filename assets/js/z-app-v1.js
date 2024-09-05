@@ -84,17 +84,45 @@ $(document).ready(function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     // Button Click Event
-    document.getElementById("show-video-btn").addEventListener("click", function () {
-        document.getElementById("hero-video").style.display = "block";
-        document.getElementById("video").currentTime = 0;
-        document.getElementById("video").play();
-    });
+    // document.getElementById("show-video-btn").addEventListener("click", function () {
+    //     document.getElementById("hero-video").style.display = "block";
+    //     document.getElementById("video").currentTime = 0;
+    //     document.getElementById("video").play();
+    // });
+
+    var showVideoBtn = document.getElementById("show-video-btn");
+
+    if (showVideoBtn) {
+        showVideoBtn.addEventListener("click", function () {
+            var heroVideo = document.getElementById("hero-video");
+            var video = document.getElementById("video");
+
+            if (heroVideo && video) {
+                heroVideo.style.display = "block";
+                video.currentTime = 0;
+                video.play();
+            }
+        });
+    }
 
     // Close Button Click Event
-    document.getElementById("close-btn").addEventListener("click", function () {
-        document.getElementById("hero-video").style.display = "none";
-        document.getElementById("video").pause();
-    });
+    // document.getElementById("close-btn").addEventListener("click", function () {
+    //     document.getElementById("hero-video").style.display = "none";
+    //     document.getElementById("video").pause();
+    // });
+    var closeBtn = document.getElementById("close-btn");
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+            var heroVideo = document.getElementById("hero-video");
+            var video = document.getElementById("video");
+
+            if (heroVideo && video) {
+                heroVideo.style.display = "none";
+                video.pause();
+            }
+        });
+    }
 
     // Click Outside Video Container Event
     window.addEventListener("click", function (event) {

@@ -84,39 +84,57 @@
               class="collapse navbar-collapse justify-content-end"
               id="navbarNav"
             >
-              <ul class="navbar-nav">
-				<?php foreach(wp_get_menu_array('Main') as $menu) { ?>
-				<?php if($menu['children']) { ?>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="<?php echo $menu['url']; ?>"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <?php echo $menu['title']; ?>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <div class="menu-wrapper">
-					  <?php foreach($menu['children'] as $child) { ?>
-                      <li>
-                        <a class="dropdown-item" href="<?php echo $child['url']; ?>"
-                          ><?php echo $child['title']; ?></a
-                        >
-                      </li>
-					  <?php } ?>
-                    </div>
-                  </ul>
-                </li>
-                <?php } else { ?>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="<?php echo $menu['url']; ?>"
-                    ><?php echo $menu['title']; ?></a
-                  >
-                </li>
-				<?php } } ?>
-              </ul>
+                <ul class="navbar-nav">
+                    <?php
+                    // Get the current URL
+                    $current_url = home_url(add_query_arg(array(),$wp->request));
+
+                    foreach(wp_get_menu_array('Main') as $menu) {
+                        $menu_class = preg_replace('/\W+/','',strtolower(strip_tags($menu['title'])));
+
+                        // Check if the current URL matches the menu URL
+                        $is_active = (rtrim($current_url, '/') === rtrim($menu['url'], '/')) ? 'active' : '';
+
+                        if($menu['children']) {
+                            ?>
+                            <li class="nav-item dropdown <?php echo $is_active; ?>">
+                                <a
+                                        class="nav-link dropdown-toggle <?php echo $menu_class; ?> <?php echo $is_active; ?>"
+                                        href="<?php echo $menu['url']; ?>"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                >
+                                    <?php echo $menu['title']; ?>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <div class="menu-wrapper">
+                                        <?php foreach($menu['children'] as $child) {
+                                            // Check if the current URL matches the child URL
+                                            $is_child_active = (rtrim($current_url, '/') === rtrim($child['url'], '/')) ? 'active' : '';
+                                            ?>
+                                            <li>
+                                                <a class="dropdown-item <?php echo $menu_class; ?> <?php echo $is_child_active; ?>" href="<?php echo $child['url']; ?>">
+                                                    <?php echo $child['title']; ?>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                    </div>
+                                </ul>
+                            </li>
+                            <?php
+                        } else {
+                            ?>
+                            <li class="nav-item <?php echo $is_active; ?>">
+                                <a class="nav-link <?php echo $menu_class; ?> <?php echo $is_active; ?>" aria-current="page" href="<?php echo $menu['url']; ?>">
+                                    <?php echo $menu['title']; ?>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                    }
+                    ?>
+                </ul>
             </div>
           </div>
         </nav>
