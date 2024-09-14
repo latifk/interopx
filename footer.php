@@ -66,28 +66,60 @@
     <?php wp_footer(); ?>
 <script>
 	
-	function submitForm(form) {
-		jQuery(form).on('submit', function(e) {
-			var contactForm = jQuery(this)[0];
-			var data = new FormData(contactForm);
-			e.preventDefault();
-			jQuery.ajax({
-				url:  '/wp-json/api/v1/sendMail',
-				data: data,
-				cache: false,
-				processData: false,
-				contentType: false,
-				type: 'POST',
-				success: function (data) {
-					var res = JSON.parse(JSON.stringify(data));
-					//$(contactForm).find(".form-button").hide();
-					$(contactForm)[0].reset();
-					$(contactForm).find(".mail-response").html(res.message).show();
-				}
-			});
-		});
-		jQuery(form).submit();
-	}
+	// function submitForm(form) {
+	// 	jQuery(form).on('submit', function(e) {
+	// 		var contactForm = jQuery(this)[0];
+	// 		var data = new FormData(contactForm);
+	// 		e.preventDefault();
+	// 		jQuery.ajax({
+	// 			url:  '/wp-json/api/v1/sendMail',
+	// 			data: data,
+	// 			cache: false,
+	// 			processData: false,
+	// 			contentType: false,
+	// 			type: 'POST',
+	// 			success: function (data) {
+	// 				var res = JSON.parse(JSON.stringify(data));
+	// 				//$(contactForm).find(".form-button").hide();
+	// 				$(contactForm)[0].reset();
+	// 				$(contactForm).find(".mail-response").html(res.message).show();
+	// 			}
+	// 		});
+	// 	});
+	// 	jQuery(form).submit();
+	// }
+
+    // Handle form submission
+    function submitForm(formSelector) {
+        var form = document.querySelector(formSelector);
+        var formData = new FormData(form);
+
+        // Send the form data via AJAX
+        jQuery.ajax({
+            url: '/wp-json/api/v1/sendMail', // Ensure this matches your REST API endpoint
+            type: 'POST',
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                if (response.status === true) {
+                    // Redirect to the thank you page
+                    window.location.href = '/thankyou';
+                } else {
+                    // Show the error message
+                    document.querySelector('.mail-response').innerHTML = response.message || 'An error occurred.';
+                    document.querySelector('.mail-response').style.display = 'block';
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle general AJAX errors
+                document.querySelector('.mail-response').innerHTML = 'An unexpected error occurred. Please try again.';
+                document.querySelector('.mail-response').style.display = 'block';
+                console.error('AJAX Error:', status, error); // Log errors for debugging
+            }
+        });
+    }
 
 function submitContact(token) {
     submitForm(".contact-page-form")

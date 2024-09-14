@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	  <script>
-		  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': 
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], 
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); 
-			})(window,document,'script','dataLayer','GTM-TNHP9SM');
-	  </script>
       <!-- Salesflare tracking -->
 <!--      <script src="https://track.salesflare.com/flare.js"></script>-->
 <!--      <script>-->
 <!--          var flare = new Flare();-->
 <!--          flare.track("KK1bazWGSoID0eB5UK5Jdbv4BCxmbEjK_Ra0kH32WgVVc");-->
 <!--      </script>-->
-    <meta charset="UTF-8" />
+ 	   <!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-617Q2RCK7C"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-617Q2RCK7C');
+		</script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16652710848"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'AW-16652710848');
+		</script>
+	  <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	  <script src="https://www.google.com/recaptcha/api.js"></script>
