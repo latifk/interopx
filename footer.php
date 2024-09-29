@@ -43,7 +43,9 @@
               data-action='submit'>Contact Us</button>
 				  
               </div>
-			  <p class="mail-response" style="margin: 2rem 0;text-align: left;color: #0e8af0;font-weight: bold;"></p>
+                <p class="mail-response"></p>
+
+                <!--			  <p class="mail-response" style="margin: 2rem 0;text-align: left;color: #0e8af0;font-weight: bold;"></p>-->
             </form>
           </div>
           <div class="col-7">

@@ -88,9 +88,8 @@ get_header(); ?>
                     name="Message"
                     id=""
                     rows="5"
-                    class="form-control"
+                    class="form-control form-control-vertical"
                     placeholder="Enter your message here..."
-                    style="resize: vertical;"
                   ></textarea>
                 </div>
                 <div class="contact-btn form-button">
@@ -105,7 +104,8 @@ get_header(); ?>
                     data-callback='submitContact'
                     data-action='submit'>Submit</button>
                 </div>
-				<p class="mail-response" style="margin: 2rem 0;text-align: center;color: #0e8af0;font-weight: bold;"></p>
+                  <p class="mail-response"></p>
+                  <!--				<p class="mail-response" style="margin: 2rem 0;text-align: center;color: #0e8af0;font-weight: bold;"></p>-->
               </div>
             </form>
           </div>

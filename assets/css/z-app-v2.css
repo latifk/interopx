@@ -2368,3 +2368,33 @@ li.nav-item a.requestademo {
 .error-message{
     font-weight: normal !important;
 }
+
+/* footer and recaptcha styles contact form*/
+
+.grecaptcha-badge {
+    display: flex !important;
+    position: relative !important;
+    bottom: 0 !important;
+    right: 20px !important;
+}
+.footer-form p.btn {
+    color: white;
+    background: #0E8AF0 !important;
+    padding: 5px 50px;
+    border-radius: 27px;
+}
+.footer-form p.btn:hover {
+    background: transparent linear-gradient(180deg, #0E8AF0 0%, #8125AA 100%) 0% 0% no-repeat padding-box !important;
+    color: white;
+}
+
+.mail-response {
+    margin: 2rem 0;
+    text-align: center;
+    color: #0e8af0;
+    font-weight: bold;
+}
+
+.form-control-vertical {
+    resize: vertical !important;
+}

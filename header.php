@@ -49,24 +49,24 @@
 
 <!--    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>-->
     <?php wp_head(); ?>
-	  <style>
-	  	.grecaptcha-badge {
-			display: flex !important;
-			position: relative !important;
-			bottom: 0 !important;
-			right: 20px !important;
-		}
-		.footer-form p.btn {
-			color: white;
-			background: #0E8AF0 !important;
-			padding: 5px 50px;
-			border-radius: 27px;
-		}
-		.footer-form p.btn:hover {
-		  	background: transparent linear-gradient(180deg, #0E8AF0 0%, #8125AA 100%) 0% 0% no-repeat padding-box !important;
-    		color: white;
-		}
-	  </style>
+<!--	  <style>-->
+<!--	  	.grecaptcha-badge {-->
+<!--			display: flex !important;-->
+<!--			position: relative !important;-->
+<!--			bottom: 0 !important;-->
+<!--			right: 20px !important;-->
+<!--		}-->
+<!--		.footer-form p.btn {-->
+<!--			color: white;-->
+<!--			background: #0E8AF0 !important;-->
+<!--			padding: 5px 50px;-->
+<!--			border-radius: 27px;-->
+<!--		}-->
+<!--		.footer-form p.btn:hover {-->
+<!--		  	background: transparent linear-gradient(180deg, #0E8AF0 0%, #8125AA 100%) 0% 0% no-repeat padding-box !important;-->
+<!--    		color: white;-->
+<!--		}-->
+<!--	  </style>-->
   </head>
   <body class="<?php echo $post->post_name;?>">
     <img
