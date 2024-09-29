@@ -7,28 +7,29 @@
 <!--          var flare = new Flare();-->
 <!--          flare.track("KK1bazWGSoID0eB5UK5Jdbv4BCxmbEjK_Ra0kH32WgVVc");-->
 <!--      </script>-->
+
  	   <!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-617Q2RCK7C"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'G-617Q2RCK7C');
-		</script>
+<!--		<script async src="https://www.googletagmanager.com/gtag/js?id=G-617Q2RCK7C"></script>-->
+<!--		<script>-->
+<!--		  window.dataLayer = window.dataLayer || [];-->
+<!--		  function gtag(){dataLayer.push(arguments);}-->
+<!--		  gtag('js', new Date());-->
+<!---->
+<!--		  gtag('config', 'G-617Q2RCK7C');-->
+<!--		</script>-->
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16652710848"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'AW-16652710848');
-		</script>
+<!--		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16652710848"></script>-->
+<!--		<script>-->
+<!--		  window.dataLayer = window.dataLayer || [];-->
+<!--		  function gtag(){dataLayer.push(arguments);}-->
+<!--		  gtag('js', new Date());-->
+<!---->
+<!--		  gtag('config', 'AW-16652710848');-->
+<!--		</script>-->
 	  <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	  <script src="https://www.google.com/recaptcha/api.js"></script>
+<!--	  <script src="https://www.google.com/recaptcha/api.js"></script>-->
 
     <title><?php wp_title(); ?></title>
     <link
@@ -46,7 +47,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
     />
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>-->
     <?php wp_head(); ?>
 	  <style>
 	  	.grecaptcha-badge {

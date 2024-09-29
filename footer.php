@@ -13,7 +13,7 @@
                   type="text"
                   name="Name"
                   class="form-control"
-                  placeholder="Name*"
+                  placeholder="Name"
                   required
                 />
               </div>
@@ -27,14 +27,20 @@
                 />
               </div>
               <div class="form-group">
-                <label>Your Message*</label>
-                <textarea name="Message" rows="5" class="form-control" required></textarea>
+                <label>Your Message</label>
+                <textarea name="Message" rows="5" class="form-control"></textarea>
               </div>
               <div class="form-button">
-                <button class="btn g-recaptcha" 
-    data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC" 
-    data-callback='submitContactFooter' 
-    data-action='submit'>Contact Us</button>
+                  <!--PROD CAPTCHA-UNCOMMENT BEFORE DEPLOYING-->
+<!--                  <button class="btn g-recaptcha"-->
+<!--                data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"-->
+<!--                data-callback='submitContactFooter'-->
+<!--                data-action='submit'>Contact Us</button>-->
+                  <!--LOCAL CAPTCHA-->
+              <button class="btn g-recaptcha"
+              data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"
+              data-callback='submitContactFooter'
+              data-action='submit'>Contact Us</button>
 				  
               </div>
 			  <p class="mail-response" style="margin: 2rem 0;text-align: left;color: #0e8af0;font-weight: bold;"></p>
@@ -65,36 +71,99 @@
     </footer>
     <?php wp_footer(); ?>
 <script>
-	
-	// function submitForm(form) {
-	// 	jQuery(form).on('submit', function(e) {
-	// 		var contactForm = jQuery(this)[0];
-	// 		var data = new FormData(contactForm);
-	// 		e.preventDefault();
-	// 		jQuery.ajax({
-	// 			url:  '/wp-json/api/v1/sendMail',
-	// 			data: data,
-	// 			cache: false,
-	// 			processData: false,
-	// 			contentType: false,
-	// 			type: 'POST',
-	// 			success: function (data) {
-	// 				var res = JSON.parse(JSON.stringify(data));
-	// 				//$(contactForm).find(".form-button").hide();
-	// 				$(contactForm)[0].reset();
-	// 				$(contactForm).find(".mail-response").html(res.message).show();
-	// 			}
-	// 		});
-	// 	});
-	// 	jQuery(form).submit();
-	// }
 
     // Handle form submission
+    // function submitForm(formSelector) {
+    //     var form = document.querySelector(formSelector);
+    //     var formData = new FormData(form);
+    //
+    //     // Send the form data via AJAX
+    //     jQuery.ajax({
+    //         url: '/wp-json/api/v1/sendMail', // Ensure this matches your REST API endpoint
+    //         type: 'POST',
+    //         data: formData,
+    //         cache: false,
+    //         processData: false,
+    //         contentType: false,
+    //         success: function(response) {
+    //             if (response.status === true) {
+    //                 // Redirect to the thank you page
+    //                 window.location.href = '/thankyou';
+    //             } else {
+    //                 // Show the error message
+    //                 document.querySelector('.mail-response').innerHTML = response.message || 'An error occurred.';
+    //                 document.querySelector('.mail-response').style.display = 'block';
+    //             }
+    //         },
+    //         error: function(xhr, status, error) {
+    //             // Handle general AJAX errors
+    //             document.querySelector('.mail-response').innerHTML = 'An unexpected error occurred. Please try again.';
+    //             document.querySelector('.mail-response').style.display = 'block';
+    //             console.error('AJAX Error:', status, error); // Log errors for debugging
+    //         }
+    //     });
+    // }
+
     function submitForm(formSelector) {
         var form = document.querySelector(formSelector);
         var formData = new FormData(form);
+        var isValid = true; // Flag to track form validity
+        var errorMessage = ''; // To accumulate error messages
 
-        // Send the form data via AJAX
+        // Clear previous error highlights and messages
+        Array.from(form.elements).forEach(function(element) {
+            element.classList.remove('error-highlight'); // Remove highlight class
+            var errorSpan = element.parentNode.querySelector('.error-message');
+            if (errorSpan) {
+                errorSpan.remove(); // Remove existing error message
+            }
+
+            // Add input event listener to required fields
+            if (element.hasAttribute('required')) {
+                element.addEventListener('input', function() {
+                    // Remove the error message when the user starts typing
+                    var errorSpan = element.parentNode.querySelector('.error-message');
+                    if (errorSpan) {
+                        errorSpan.remove();
+                        element.classList.remove('error-highlight'); // Optionally remove highlight
+                    }
+                });
+            }
+        });
+
+        // Validate required fields
+        Array.from(form.elements).forEach(function(element) {
+            if (element.hasAttribute('required') && !element.value.trim()) {
+                isValid = false;
+                errorMessage += `${element.name} is required.<br>`; // Customize message as needed
+
+                // Highlight the field
+                element.classList.add('error-highlight');
+
+                // Create an error message span
+                var errorSpan = document.createElement('span');
+                errorSpan.className = 'error-message';
+                errorSpan.style.color = 'red'; // Set text color to red
+                errorSpan.innerText = `${element.name} is required.`;
+                element.parentNode.insertBefore(errorSpan, element.nextSibling); // Insert message after the field
+            }
+        });
+
+        if (!isValid) {
+            // Display error messages in a general location
+            document.querySelector('.mail-response').innerHTML = errorMessage;
+            document.querySelector('.mail-response').style.display = 'block';
+
+            // Scroll to the first invalid field (if needed)
+            const firstInvalidField = form.querySelector('.error-highlight');
+            if (firstInvalidField) {
+                firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstInvalidField.focus(); // Optionally focus on the field
+            }
+            return; // Stop the function here
+        }
+
+        // Send the form data via AJAX if validation passes
         jQuery.ajax({
             url: '/wp-json/api/v1/sendMail', // Ensure this matches your REST API endpoint
             type: 'POST',

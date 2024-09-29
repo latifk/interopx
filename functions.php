@@ -71,6 +71,39 @@ function save_teaser_field($post_id) {
 }
 add_action('save_post', 'save_teaser_field');
 
+function add_google_tags() {
+    ?>
+    <!-- Google tag (gtag.js) for Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-617Q2RCK7C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-617Q2RCK7C');
+    </script>
+
+    <!-- Google tag (gtag.js) for Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16652710848"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16652710848');
+    </script>
+    <?php
+}
+add_action('wp_head', 'add_google_tags');
+
+function add_recaptcha_script() {
+    wp_enqueue_script('recaptcha', 'https://www.google.com/recaptcha/api.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'add_recaptcha_script');
+
+function add_swiper_script() {
+    wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'add_swiper_script');
+
 //function check_referrer_and_current_url() {
 //    // Ensure HTTP_REFERER is set
 //    if ( isset($_SERVER['HTTP_REFERER']) ) {

@@ -2284,6 +2284,7 @@ section.post-boxes .card-light {
 /*    min-width: 217px;*/
 /*}*/
 
+a.getintouch,
 a.requestademo {
     color: white !important;
     background: #2b99f3 !important;
@@ -2292,6 +2293,7 @@ a.requestademo {
     text-align: center;
 }
 
+li.nav-item a.getintouch,
 li.nav-item a.requestademo {
     color: white !important;
     padding-left: 15px !important;
@@ -2347,4 +2349,22 @@ li.nav-item a.requestademo {
 
 .img-fluid.floating-bg {
     opacity: 0.2;
+}
+
+.form-select {
+    display: block; /* Full-width block element */
+    width: 100%; /* Full width */
+    min-width: 250px; /* Adjust as necessary */
+    padding: 8px; /* Comfortable padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.form-group {
+    width: 100%; /* Full width */
+    overflow: visible; /* Ensure dropdown is not cut off */
+    margin-bottom: 1rem; /* Space between form groups */
+}
+
+.error-message{
+    font-weight: normal !important;
 }
