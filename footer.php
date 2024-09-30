@@ -32,15 +32,15 @@
               </div>
               <div class="form-button">
                   <!--PROD CAPTCHA-UNCOMMENT BEFORE DEPLOYING-->
-<!--                  <button class="btn g-recaptcha"-->
-<!--                data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"-->
-<!--                data-callback='submitContactFooter'-->
-<!--                data-action='submit'>Contact Us</button>-->
+                  <button class="btn g-recaptcha"
+                data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"
+                data-callback='submitContactFooter'
+                data-action='submit'>Contact Us</button>
                   <!--LOCAL CAPTCHA-->
-              <button class="btn g-recaptcha"
-              data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"
-              data-callback='submitContactFooter'
-              data-action='submit'>Contact Us</button>
+<!--              <button class="btn g-recaptcha"-->
+<!--              data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"-->
+<!--              data-callback='submitContactFooter'-->
+<!--              data-action='submit'>Contact Us</button>-->
 				  
               </div>
                 <p class="mail-response"></p>
