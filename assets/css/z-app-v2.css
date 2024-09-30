@@ -2369,7 +2369,7 @@ li.nav-item a.requestademo {
     font-weight: normal !important;
 }
 
-/* footer and recaptcha styles contact form*/
+/* footer and recaptcha styles contact form */
 
 .grecaptcha-badge {
     display: flex !important;
@@ -2384,7 +2384,7 @@ li.nav-item a.requestademo {
     border-radius: 27px;
 }
 .footer-form p.btn:hover {
-    background: transparent linear-gradient(180deg, #0E8AF0 0%, #8125AA 100%) 0% 0% no-repeat padding-box !important;
+    background: transparent linear-gradient(180deg, #0E8AF0 0%, #8125AA 100%) 0 0 no-repeat padding-box !important;
     color: white;
 }
 
@@ -2397,4 +2397,13 @@ li.nav-item a.requestademo {
 
 .form-control-vertical {
     resize: vertical !important;
+}
+
+/* fProduct page hero background */
+.product-background {
+    background-image: url('/wp-content/uploads/2024/07/products.jpg');
+}
+
+.homepage-background {
+    background-image: url('/wp-content/uploads/2024/07/homepage.png');
 }

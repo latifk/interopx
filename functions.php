@@ -104,36 +104,7 @@ function add_swiper_script() {
 }
 add_action('wp_enqueue_scripts', 'add_swiper_script');
 
-//function check_referrer_and_current_url() {
-//    // Ensure HTTP_REFERER is set
-//    if ( isset($_SERVER['HTTP_REFERER']) ) {
-//        $referrer_url = esc_url_raw($_SERVER['HTTP_REFERER']);
-//
-//        // Parse the referrer URL to extract components
-//        $parsed_referrer = parse_url($referrer_url);
-//        $referrer_path = isset($parsed_referrer['path']) ? $parsed_referrer['path'] : '';
-//
-//        // Check if referrer path contains '/contact'
-//        if ( strpos($referrer_path, '/contact') !== false ) {
-//            // Get the current URL's query parameters
-//            $current_url = esc_url_raw($_SERVER['REQUEST_URI']);
-//            $parsed_current = parse_url($current_url);
-//            $query_params = array();
-//
-//            // Parse the query string into an array
-//            parse_str(isset($parsed_current['query']) ? $parsed_current['query'] : '', $query_params);
-//
-//            // Check for the presence of 'last-name' and 'company' query parameters
-//            $last_name = isset($query_params['Email']) ? sanitize_text_field($query_params['Email']) : '';
-//            $company = isset($query_params['Company']) ? sanitize_text_field($query_params['Company']) : '';
-//
-//            // If both parameters are present, perform your desired action
-//            if ($last_name && $company) {
-//                // For example, redirect to another page
-//                wp_redirect(home_url('/thankyou'));
-//                exit; // Ensure no further code is executed after redirect
-//            }
-//        }
-//    }
-//}
-//add_action('template_redirect', 'check_referrer_and_current_url');
+function enqueue_form_scripts() {
+    wp_enqueue_script('form-scripts', get_template_directory_uri() . '/assets/js/form-scripts.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_form_scripts');

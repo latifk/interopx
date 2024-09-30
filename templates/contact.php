@@ -43,15 +43,6 @@ get_header(); ?>
                     required
                   />
                 </div>
-<!--                <div class="col-6">-->
-<!--                  <input-->
-<!--                    type="text"-->
-<!--                    class="form-control"-->
-<!--				 	name="Last name"-->
-<!--                    placeholder="Last name*"-->
-<!--                    required-->
-<!--                  />-->
-<!--                </div>-->
                 <div class="col-12">
                   <input
                     type="text"

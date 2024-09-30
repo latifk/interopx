@@ -1,35 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <!-- Salesflare tracking -->
-<!--      <script src="https://track.salesflare.com/flare.js"></script>-->
-<!--      <script>-->
-<!--          var flare = new Flare();-->
-<!--          flare.track("KK1bazWGSoID0eB5UK5Jdbv4BCxmbEjK_Ra0kH32WgVVc");-->
-<!--      </script>-->
-
- 	   <!-- Google tag (gtag.js) -->
-<!--		<script async src="https://www.googletagmanager.com/gtag/js?id=G-617Q2RCK7C"></script>-->
-<!--		<script>-->
-<!--		  window.dataLayer = window.dataLayer || [];-->
-<!--		  function gtag(){dataLayer.push(arguments);}-->
-<!--		  gtag('js', new Date());-->
-<!---->
-<!--		  gtag('config', 'G-617Q2RCK7C');-->
-<!--		</script>-->
-		<!-- Google tag (gtag.js) -->
-<!--		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16652710848"></script>-->
-<!--		<script>-->
-<!--		  window.dataLayer = window.dataLayer || [];-->
-<!--		  function gtag(){dataLayer.push(arguments);}-->
-<!--		  gtag('js', new Date());-->
-<!---->
-<!--		  gtag('config', 'AW-16652710848');-->
-<!--		</script>-->
 	  <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!--	  <script src="https://www.google.com/recaptcha/api.js"></script>-->
 
     <title><?php wp_title(); ?></title>
     <link
@@ -46,27 +20,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
     />
-
-<!--    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>-->
     <?php wp_head(); ?>
-<!--	  <style>-->
-<!--	  	.grecaptcha-badge {-->
-<!--			display: flex !important;-->
-<!--			position: relative !important;-->
-<!--			bottom: 0 !important;-->
-<!--			right: 20px !important;-->
-<!--		}-->
-<!--		.footer-form p.btn {-->
-<!--			color: white;-->
-<!--			background: #0E8AF0 !important;-->
-<!--			padding: 5px 50px;-->
-<!--			border-radius: 27px;-->
-<!--		}-->
-<!--		.footer-form p.btn:hover {-->
-<!--		  	background: transparent linear-gradient(180deg, #0E8AF0 0%, #8125AA 100%) 0% 0% no-repeat padding-box !important;-->
-<!--    		color: white;-->
-<!--		}-->
-<!--	  </style>-->
+
   </head>
   <body class="<?php echo $post->post_name;?>">
     <img
