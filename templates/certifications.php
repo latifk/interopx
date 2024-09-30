@@ -122,7 +122,7 @@ get_header(); ?>
 				<?php foreach(get_field('table_section_four') as $table) { ?>
                 <tr>
                   <td><?php echo $table['calendar_year']; ?></td>
-                  <td><a href="<?php echo $table['real_world_testing_plan']['url']; ?>" style="text-decoration: none;"><?php echo $table['real_world_testing_plan']['title']; ?></a></td>
+                  <td><a class="text-decoration-none" href="<?php echo $table['real_world_testing_plan']['url']; ?>" ><?php echo $table['real_world_testing_plan']['title']; ?></a></td>
                   <td><?php echo $table['real_world_testing_results']; ?></td>
                 </tr>
 				<?php } ?>

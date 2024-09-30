@@ -14,7 +14,7 @@ get_header(); ?>
     </div>
 </section>
 <section class="solutions-hero">
-      <figure style="background: white">
+      <figure class="figure-background">
         <?php require_once(get_template_directory() . '/assets/images/solutions-animation.svg'); ?>  
       </figure>
     </section>
@@ -71,7 +71,7 @@ get_header(); ?>
               <p class="description"><?php echo the_field('box_small_title_1'); ?></p>
               <p class="gradient-line"></p>
               <h2 class="title-1"><?php echo the_field('box_title_2'); ?></h2>
-              <hr style="height: 3px" />
+              <hr class="hr-style" />
               <h2 class="title-2"><?php echo the_field('box_title_3'); ?></h2>
               <div class="bubbles">
 			  <?php foreach(get_field('bullet_list') as $bullet) { ?>

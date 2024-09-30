@@ -16,7 +16,7 @@ get_header(); ?>
 <!--      </div>-->
 <!--    </section>-->
     <section class="solutions-hero">
-        <figure style="background: white">
+        <figure class="figure-background">
             <?php require_once(get_template_directory() . '/assets/images/solutions-animation.svg'); ?>
         </figure>
     </section>
@@ -110,7 +110,7 @@ $args = array(
                         <?php echo $box2['description']; ?>
                         <p class="box-button <?php echo (count($box2['buttons']) >=2 ? 'double-btn' : ''); ?>">
                             <?php foreach($box2['buttons'] as $button) { ?>
-                                <a href="<?php echo $button['url']; ?>" style="color: inherit"><?php echo $button['label']; ?></a>
+                                <a class="use-casses-btn" href="<?php echo $button['url']; ?>"><?php echo $button['label']; ?></a>
                             <?php } ?>
                         </p>
                     </div>

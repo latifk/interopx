@@ -2407,3 +2407,22 @@ li.nav-item a.requestademo {
 .homepage-background {
     background-image: url('/wp-content/uploads/2024/07/homepage.png');
 }
+
+.figure-background {
+    background: white;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.insight-btn,
+.resources-btn,
+.use-casses-btn,
+.news-btn {
+    color: inherit;
+}
+
+.hr-style {
+    height: 3px;
+}

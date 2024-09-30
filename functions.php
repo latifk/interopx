@@ -72,27 +72,14 @@ function save_teaser_field($post_id) {
 add_action('save_post', 'save_teaser_field');
 
 function add_google_tags() {
-    ?>
-    <!-- Google tag (gtag.js) for Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-617Q2RCK7C"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-617Q2RCK7C');
-    </script>
-
-    <!-- Google tag (gtag.js) for Ads -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16652710848"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-16652710848');
-    </script>
-    <?php
+    // Analytics script
+    wp_enqueue_script('google-analytics', 'https://www.googletagmanager.com/gtag/js?id=G-617Q2RCK7C', array(), null, true);
+    // Ads script
+    wp_enqueue_script('google-ads', 'https://www.googletagmanager.com/gtag/js?id=AW-16652710848', array(), null, true);
+    // Custom script
+    wp_enqueue_script('google-tags', get_template_directory_uri() . '/assets/js/google-tags.js', array(), null, true);
 }
-add_action('wp_head', 'add_google_tags');
+add_action('wp_enqueue_scripts', 'add_google_tags');
 
 function add_recaptcha_script() {
     wp_enqueue_script('recaptcha', 'https://www.google.com/recaptcha/api.js', array(), null, true);

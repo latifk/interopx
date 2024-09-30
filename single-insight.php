@@ -54,7 +54,7 @@ get_header();
                                     <?php echo $box['description']; ?>
                                     <p class="box-button <?php echo (count($box['buttons']) >=2 ? 'double-btn' : ''); ?>">
                                         <?php foreach($box['buttons'] as $button) { ?>
-                                            <a href="<?php echo $button['url']; ?>" style="color: inherit"><?php echo $button['label']; ?></a>
+                                            <a class="insight-btn" href="<?php echo $button['url']; ?>" ><?php echo $button['label']; ?></a>
                                         <?php } ?>
                                     </p>
                                 </div>

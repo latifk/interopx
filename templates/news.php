@@ -66,7 +66,7 @@ get_header(); ?>
                             </div>
                         <?php echo the_excerpt(); ?>
                         <p class="box-button">
-                           <a href="<?php the_permalink(); ?>" style="color: inherit">Read More</a>
+                           <a class="news-btn" href="<?php the_permalink(); ?>" >Read More</a>
                         </p>
 
                         </div>
