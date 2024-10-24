@@ -54,6 +54,11 @@ class Mail {
 
     public static function sendMail($mailData, $files = false)
     {
+        $referrerURL = '';
+        if (isset($_COOKIE['referrerURL'])) {
+            $referrerURL = $_COOKIE['referrerURL'];
+        }
+
         $to = ['info@interopx.com'];
         $subject = "New message from website";
 
@@ -61,7 +66,12 @@ class Mail {
         $body = "Hi,<br> You have a new message from the website<br><br>";
         foreach($mailData as $key => $value) {
             if ($key == 'g-recaptcha-response') continue; // Skip reCAPTCHA response
-            $body .= "<b>" . str_replace("_", " ", $key) . ":</b> " . esc_html($value) . "<br>";
+            $body .= "<b>" . str_replace("_", " ", $key) . ":</b> " . esc_html($value) . "<br>" ;
+        }
+
+        // Check if the body string is not empty
+        if (!empty($body) && !empty($referrerURL)) {
+            $body .= "<b>Came From:</b> " . esc_html($referrerURL) . "<br>" ;; // Concatenate the additional string
         }
 
         // Set email headers

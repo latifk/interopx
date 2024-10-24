@@ -36,7 +36,7 @@
                 data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"
                 data-callback='submitContactFooter'
                 data-action='submit'>Contact Us</button>
-                  <!--LOCAL CAPTCHA-->
+                  <!--LOCAL and STAGE CAPTCHA-->
 <!--              <button class="btn g-recaptcha"-->
 <!--              data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"-->
 <!--              data-callback='submitContactFooter'-->
@@ -58,11 +58,28 @@
 				 <?php } ?>
               </ul>
               <?php } ?>
-              <div class="footer-socials">
-                <p><i class="fa fa-facebook" aria-hidden="true"></i></p>
-                <p><i class="fa fa-linkedin" aria-hidden="true"></i></p>
-                <p><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
-              </div>
+<!--              <div class="footer-socials">-->
+<!--                <p><i class="fa fa-facebook" aria-hidden="true"></i></p>-->
+<!--                <p><i class="fa fa-linkedin" aria-hidden="true"></i></p>-->
+<!--                <p><i class="fa fa-envelope-o" aria-hidden="true"></i></p>-->
+<!--              </div>-->
+                <div class="footer-socials">
+                    <p>
+                        <a href="https://www.facebook.com/InteropX" target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/company/interopx.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:info@interopx.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </div>
             </div>
           </div>
         </div>

@@ -89,7 +89,7 @@ get_header(); ?>
                     data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"
                     data-callback='submitContact'
                     data-action='submit'>Submit</button>
-                    <!--LOCAL CAPTCHA-->
+                    <!--LOCAL and STAGE CAPTCHA-->
 <!--                    <button class="btn g-recaptcha"-->
 <!--                    data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"-->
 <!--                    data-callback='submitContact'-->

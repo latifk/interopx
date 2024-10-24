@@ -95,3 +95,11 @@ function enqueue_form_scripts() {
     wp_enqueue_script('form-scripts', get_template_directory_uri() . '/assets/js/form-scripts.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_form_scripts');
+
+function enqueue_referrer_tracker_scripts() {
+    // Check if we are on a specific page
+    if (is_page('ix-databridge')) { // Replace 'your-page-slug' with your actual page slug
+        wp_enqueue_script('referrer-tracker', get_template_directory_uri() . '/assets/js/referrer-tracker.js', array(), null, true);
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_referrer_tracker_scripts');
