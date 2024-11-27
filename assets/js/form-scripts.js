@@ -67,8 +67,16 @@ function submitForm(formSelector) {
         contentType: false,
         success: function(response) {
             if (response.status === true) {
-                // Redirect to the thank you page
-                window.location.href = '/thankyou';
+                if (formSelector === '.register-page-form') {
+                    // Redirect to the watch overview video page
+                    window.location.href = '/overview-ix-databridge';
+                    setCookie('watchVideo', 1, 1000); // Store for 7 days
+                }
+                else {
+                    // Redirect to the thank you page
+                    window.location.href = '/thankyou';
+                }
+
             } else {
                 // Show the error message
                 document.querySelector('.mail-response').innerHTML = response.message || 'An error occurred.';
@@ -90,4 +98,8 @@ function submitContact(token) {
 
 function submitContactFooter(token) {
     submitForm(".footer-form")
+}
+
+function submitRegister(token) {
+    submitForm(".register-page-form")
 }

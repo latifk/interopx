@@ -2433,3 +2433,12 @@ li.nav-item a.requestademo {
 .hr-style {
     height: 3px;
 }
+
+.desc-text {
+    padding-right: 25px;
+    font-size: 22px;
+}
+
+.contact-form.register-form {
+    margin: 1rem 0;
+}

@@ -64,7 +64,16 @@ get_header(); ?>
                                 echo $post_date->format('F j, Y');
                                 ?>
                             </div>
-                        <?php echo the_excerpt(); ?>
+                            <?php
+                            // Get the teaser content
+                            $teaser_value = get_post_meta(get_the_ID(), '_teaser_key', true);
+                            // Check if teaser content exists, if not use the excerpt
+                            if (!empty($teaser_value)) {
+                                echo $teaser_value;
+                            } else {
+                                echo the_excerpt();
+                            }
+                            ?>
                         <p class="box-button">
                            <a class="news-btn" href="<?php the_permalink(); ?>" >Read More</a>
                         </p>

@@ -32,15 +32,15 @@
               </div>
               <div class="form-button">
                   <!--PROD CAPTCHA-UNCOMMENT BEFORE DEPLOYING-->
-                  <button class="btn g-recaptcha"
-                data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"
-                data-callback='submitContactFooter'
-                data-action='submit'>Contact Us</button>
+<!--                  <button class="btn g-recaptcha"-->
+<!--                data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"-->
+<!--                data-callback='submitContactFooter'-->
+<!--                data-action='submit'>Contact Us</button>-->
                   <!--LOCAL and STAGE CAPTCHA-->
-<!--              <button class="btn g-recaptcha"-->
-<!--              data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"-->
-<!--              data-callback='submitContactFooter'-->
-<!--              data-action='submit'>Contact Us</button>-->
+              <button class="btn g-recaptcha"
+              data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"
+              data-callback='submitContactFooter'
+              data-action='submit'>Contact Us</button>
 				  
               </div>
                 <p class="mail-response"></p>
@@ -85,7 +85,7 @@
         </div>
       </div>
       <div class="copyright">
-        <p>Copyright &copy; InteropX. All rights reserved. | Privacy Policy</p>
+        <p>Copyright &copy; InteropX. All rights reserved. | <a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=dc6ab503-96d7-49a0-b7d8-3439fa576973" target="_blank">Privacy Policy</a> | <a href="/wp-content/uploads/2024/11/IMS_Policy.pdf" target="_blank">IMS Policy</a></p>
       </div>
     </footer>
     <?php wp_footer(); ?>

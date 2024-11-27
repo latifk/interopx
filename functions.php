@@ -56,7 +56,7 @@ function display_teaser_field($post) {
     ?>
     <label for="teaser">Teaser:</label><br>
     <textarea id="teaser" name="teaser" rows="4" cols="50" required><?php echo esc_textarea($teaser_value); ?></textarea><br>
-    <p class="description">Maximum length: 200 characters</p>
+    <p class="description">Maximum length: 300 characters</p>
     <?php
 }
 
@@ -65,7 +65,7 @@ function save_teaser_field($post_id) {
     if (isset($_POST['teaser'])) {
         $teaser = sanitize_textarea_field($_POST['teaser']);
         // Limit to 200 characters
-        $teaser = substr($teaser, 0, 200);
+        $teaser = substr($teaser, 0, 300);
         update_post_meta($post_id, '_teaser_key', $teaser);
     }
 }
@@ -97,9 +97,69 @@ function enqueue_form_scripts() {
 add_action('wp_enqueue_scripts', 'enqueue_form_scripts');
 
 function enqueue_referrer_tracker_scripts() {
-    // Check if we are on a specific page
-    if (is_page('ix-databridge')) { // Replace 'your-page-slug' with your actual page slug
+//    // Check if we are on a specific page
+//    if (is_page('ix-databridge')) { // Replace 'your-page-slug' with your actual page slug
         wp_enqueue_script('referrer-tracker', get_template_directory_uri() . '/assets/js/referrer-tracker.js', array(), null, true);
-    }
+//    }
 }
 add_action('wp_enqueue_scripts', 'enqueue_referrer_tracker_scripts');
+
+// Use Transient way
+function set_transient_on_first_visit() {
+    // Check if we are on the ix-databridge page
+    if (is_page('ix-databridge')) {
+        // Check if the transient is already set
+        if (!get_transient('referrerURL')) {
+            // Set the transient value for the user's session
+            $value = !empty($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'Direct Visit'; // Set your desired value
+            $expiration = 12 * 7200; // Set expiration time, 2 hours
+            set_transient('referrerURL', $value, $expiration);
+        }
+    }
+}
+add_action('wp', 'set_transient_on_first_visit');
+
+function add_gtm_to_header() {
+    ?>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MHCTSGHT');</script>
+    <!-- End Google Tag Manager -->
+    <?php
+}
+
+add_action('wp_head', 'add_gtm_to_header', 1); // 1 makes sure it's the first action in wp_head
+
+// Add GTM noscript to the body section
+function add_gtm_noscript() {
+    ?>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHCTSGHT"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <?php
+}
+add_action('wp_body_open', 'add_gtm_noscript', 1);
+
+function check_watch_vidoe_cookie() {
+    $restricted_page_slug = 'overview-ix-databridge'; // page's slug
+
+    $allowed_referrer_slug = 'ix-databridge-video-register'; // referrer slag
+
+    // Check if we are on the restricted page by slug
+    if (is_page($restricted_page_slug)) {
+        // Check if the cookie 'userStatus' is set and if its value is '1'
+        // Get the home URL for comparison
+        $reg_url = '/ix-databridge-video-register';
+        if (!isset($_COOKIE['watchVideo']) || $_COOKIE['watchVideo'] !== '1') {
+            // Redirect to another page or show an error message
+            // Redirect to the page with the slug 'my-page'
+            wp_redirect($reg_url);
+            exit; // Make sure to stop further execution
+        }
+    }
+}
+add_action('template_redirect', 'check_watch_vidoe_cookie');

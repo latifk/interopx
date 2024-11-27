@@ -24,7 +24,8 @@
 
   </head>
   <body class="<?php echo $post->post_name;?>">
-    <img
+  <?php wp_body_open(); ?>
+	  <img
       src="<?php echo get_template_directory_uri()?>/assets/images/float-bg.svg"
       class="img-fluid floating-bg"
       alt=""
