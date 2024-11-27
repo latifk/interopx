@@ -22,19 +22,29 @@ $image = 1;
                         </p>
 
                       </div>
-                      <?php if ( get_field('hero_button_video') ) { ?>
-                          <div class="hero-content-bottom">
-                              <p class="box-button">
-                                  <button id="show-video-btn" class="btn" ><?php echo get_field('hero_button_text'); ?></button>
-                              </p>
-                          </div>
-                     <?php } ?>
-                      <div id="hero-video" class="hero-video">-->
-                          <span id="close-btn">&times;</span>
-                          <video id="video" controls class="home-hero-video">
-                             <source src="<?php echo get_field('hero_button_video'); ?>" type="video/mp4; codec='hvcl">
-                         </video>
-                      </div>
+                        <?php if ( get_field('hero_button_video') ) { ?>
+                            <div class="hero-content-bottom">
+                                <p class="box-button">
+                                    <button id="show-video-btn" class="btn" onclick="window.location.href='/ix-databridge-video-register';">
+                                        Watch a short Video
+                                    </button>
+                                </p>
+                            </div>
+                        <?php } ?>
+                        
+<!--                      --><?php //if ( get_field('hero_button_video') ) { ?>
+<!--                          <div class="hero-content-bottom">-->
+<!--                              <p class="box-button">-->
+<!--                                  <button id="show-video-btn" class="btn" >--><?php //echo get_field('hero_button_text'); ?><!--</button>-->
+<!--                              </p>-->
+<!--                          </div>-->
+<!--                     --><?php //} ?>
+<!--                      <div id="hero-video" class="hero-video">-->-->
+<!--                          <span id="close-btn">&times;</span>-->
+<!--                          <video id="video" controls class="home-hero-video">-->
+<!--                             <source src="--><?php //echo get_field('hero_button_video'); ?><!--" type="video/mp4; codec='hvcl">-->
+<!--                         </video>-->
+<!--                      </div>-->
                     </div>
                   </div>
                 </div>

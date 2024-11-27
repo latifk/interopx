@@ -22,7 +22,8 @@ get_header();
       <div class="container">
         <div class="row">
           <div class="col-6">
-              <h1>Introducing iX DataBridge</h1>
+              <h1>iX DataBridge</h1>
+              <h2>Unlock Exclusive Access to In-Depth Product Videos</h2>
               <p class="desc-text">X DataBridge seamlessly delivers clinical records including CCD-A to the Health Plan’s data repository in the desired target format ensuring immediate availability of the data for analysis, risk adjustment, and care gap closure. Instead of scrambling for patient records, Health Plans can rely on iX DataBridge to cost-effectively create an authoritative source of clinical encounter data for the entire patient population. Configure iX DataBridge once, and it will automatically keep your clinical data repository up to date.</p>
           </div>
           <div class="col-6">

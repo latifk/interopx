@@ -2441,4 +2441,8 @@ li.nav-item a.requestademo {
 
 .contact-form.register-form {
     margin: 1rem 0;
+
+    h1 {
+        font-weight: 800;
+    }
 }
