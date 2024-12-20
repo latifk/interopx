@@ -31,17 +31,21 @@
                 <textarea name="Message" rows="5" class="form-control"></textarea>
               </div>
               <div class="form-button">
-                  <!--PROD CAPTCHA-UNCOMMENT BEFORE DEPLOYING-->
-<!--                  <button class="btn g-recaptcha"-->
-<!--                data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"-->
-<!--                data-callback='submitContactFooter'-->
-<!--                data-action='submit'>Contact Us</button>-->
-                  <!--LOCAL and STAGE CAPTCHA-->
-              <button class="btn g-recaptcha"
-              data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"
-              data-callback='submitContactFooter'
-              data-action='submit'>Contact Us</button>
-				  
+                  <?php
+                  if( $_SERVER['SERVER_NAME'] == 'interopx.com') { ?>
+                      <!--PROD CAPTCHA-UNCOMMENT BEFORE DEPLOYING-->
+                      <button class="btn g-recaptcha"
+                              data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"
+                              data-callback='submitContactFooter'
+                              data-action='submit'>Contact Us</button>
+                  <?php } else { ?>
+                      <!--LOCAL and STAGE CAPTCHA-->
+                      <button class="btn g-recaptcha"
+                              data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"
+                              data-callback='submitContactFooter'
+                              data-action='submit'>Contact Us</button>
+                  <?php } ?>
+
               </div>
                 <p class="mail-response"></p>
 

@@ -1,11 +1,30 @@
 <?php 
 
 /**
- * Template name: Register to watch
+ * Template name: White Papers Registration
  */
 get_header();
-?>
 
+// Get the value of 'wid' from the URL
+$wid_value = isset($_GET['wid']) ? $_GET['wid'] : ''; // Default to empty if not set
+// Replace all dashes with spaces
+$wid_name = str_replace('-', ' ', $wid_value);
+
+// Capitalize the first letter of each word
+$wid_name= ucwords($wid_name);
+$title = "";
+$subtitle = "";
+if ($wid_value == "cms-0057f-white-paper") {
+    $wid = 'getting-your-cms-0057-f-implementation-right';
+    $title = "Getting your CMS-0057-F Implementation Right";
+    $subtitle = "Access our CMS-0057-F White Paper by sharing your contact information";
+}
+else if ($wid_value == "complete-data-white-paper") {
+    $wid = 'complete-data-is-the-key-to-streamlining-medicare-advantage-operations';
+    $title = "Complete Data is the Key to Streamlining Medicare Advantage Operations";
+    $subtitle = "Access our Complete and always up-to-date Data White Paper by sharing your contact information";
+}
+?>
 
 <!--<section class="contact-hero">-->
 <!--      <div class="container">-->
@@ -21,23 +40,18 @@ get_header();
       <div class="container">
         <div class="row">
           <div class="col-7">
-              <h1>iX DataBridge – Unlock Cost-Efficient Access to Patient Data for HEDIS, Risk Adjustment, and CMS Reporting</h1>
-              <h2>Access our video by sharing your contact information</h2>
+              <h1><?php echo $title ?></h1>
+              <h2><?php echo $subtitle ?></h2>
               <p class="desc-text">
-                  Discover how <strong>iX DataBridge</strong> simplifies patient data access with a comprehensive,
-                  always up-to-date solution. This cloud-native application seamlessly delivers ‘ready-to-analyze’
-                  clinical data through APIs (FHIR, REST) or SFTP, ensuring accurate and timely data for health
-                  plans, ACOs, and IDNs. Once deployed in the <strong>InteropX</strong> or your cloud environment, iX DataBridge automates patient
-                  data extraction from provider systems, reducing costs and enhancing efficiency for critical processes
-                  like HEDIS, risk adjustment, and closure of care gaps.
+                  Request our white papers and schedule a 30-minute exploratory call with our experts. Give us a chance to show you how we can boost your Medicare Advantage VBC Contracts operations.
               </p>
           </div>
           <div class="col-5">
-            <h2 class="title">Watch Now</h2>
+            <h2 class="title">View Now</h2>
               <p class="desc-text">
-                  Please provide your name and email below to access our <strong>exclusive video</strong> and explore how iX DataBridge transforms data accessibility for payers.
+                  Please provide your name and email below to access our <strong><?php echo $wid_name ?></strong> and explore how iX DataBridge transforms data accessibility for payers.
               </p>
-            <form class="register-page-form">
+            <form class="wp-register-page-form">
               <div class="row">
                 <div class="col-12">
                   <input
@@ -65,22 +79,24 @@ get_header();
                     required
                   />
                 </div>
-                <!-- Hidden Field -->
-                <input type="hidden" name="source" value="video_registration" />
+                <!-- Hidden Fields -->
+                <input type="hidden" name="source" value="whitepapers_registration" />
+                <input type="hidden" name="whitepaper_id" value="<?php echo esc_attr($wid_value); ?>"" />
+                <input type="hidden" name="whitepaper_pdf_url" value="<?php echo esc_attr($wid); ?>"" />
                 <div class="contact-btn form-button">
                 <?php
                 if( $_SERVER['SERVER_NAME'] == 'interopx.com') { ?>
                     <!--PROD CAPTCHA-UNCOMMENT BEFORE DEPLOYING-->
                     <button class="btn g-recaptcha"
                     data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"
-                    data-callback='submitRegister'
-                    data-action='submit'>Watch Now</button>
+                    data-callback='submitWPRegister'
+                    data-action='submit'>View Now</button>
                 <?php } else { ?>
                     <!--LOCAL and STAGE CAPTCHA-->
                     <button class="btn g-recaptcha "
                     data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"
-                    data-callback='submitRegister'
-                    data-action='submit'>Watch Now</button>
+                    data-callback='submitWPRegister'
+                    data-action='submit'>View Now</button>
                 <?php } ?>
                 </div>
                   <p class="mail-response"></p>

@@ -119,6 +119,36 @@ function set_transient_on_first_visit() {
 }
 add_action('wp', 'set_transient_on_first_visit');
 
+/*
+Add Google Consent Mode
+Description: Adds Google Consent Mode to the site.
+*/
+function add_google_consent_mode_script() {
+    ?>
+    <!-- Google Consent Mode -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("consent", "default", {
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            analytics_storage: "denied",
+            functionality_storage: "denied",
+            personalization_storage: "denied",
+            security_storage: "granted",
+            wait_for_update: 2000,
+        });
+        gtag("set", "ads_data_redaction", true);
+        gtag("set", "url_passthrough", true);
+    </script>
+    <!-- End Consent Mode -->
+    <?php
+}
+//add_action('wp_head', 'add_google_consent_mode_script', -2); // 2 makes sure it's the second action in wp_head
+
 function add_gtm_to_header() {
     ?>
     <!-- Google Tag Manager -->
@@ -131,7 +161,7 @@ function add_gtm_to_header() {
     <?php
 }
 
-add_action('wp_head', 'add_gtm_to_header', 1); // 1 makes sure it's the first action in wp_head
+add_action('wp_head', 'add_gtm_to_header', -1); // 2 makes sure it's the second action in wp_head
 
 // Add GTM noscript to the body section
 function add_gtm_noscript() {
@@ -154,7 +184,7 @@ function check_watch_vidoe_cookie() {
         // Check if the cookie 'userStatus' is set and if its value is '1'
         // Get the home URL for comparison
         $reg_url = '/ix-databridge-video-register';
-        if (!isset($_COOKIE['watchVideo']) || $_COOKIE['watchVideo'] !== '1') {
+        if (!isset($_COOKIE['wordpress_watchVideo']) || $_COOKIE['wordpress_watchVideo'] !== 'yes') {
             // Redirect to another page or show an error message
             // Redirect to the page with the slug 'my-page'
             wp_redirect($reg_url);
@@ -163,3 +193,177 @@ function check_watch_vidoe_cookie() {
     }
 }
 add_action('template_redirect', 'check_watch_vidoe_cookie');
+
+//function check_watch_video_cookie_and_redirect() {
+//    $page_slug = 'ix-databridge-video-register'; // page's slug
+//
+//    $allowed_referrer_slug = 'ix-databridge-video-register'; // referrer slag
+//
+//    // Check if we are on the restricted page by slug
+//    if (is_page($page_slug)) {
+//        // Check if the cookie 'userStatus' is set and if its value is '1'
+//        $video_url = '/overview-ix-databridge';
+//        if (isset($_COOKIE['watchVideo']) && $_COOKIE['watchVideo'] === '1') {
+//            // Log the redirect condition
+//            error_log('Cookie is set, redirecting to /overview-ix-databridge');
+//            // Redirect to the page with the slug 'my-page'
+//            wp_redirect($video_url);
+//            exit; // Make sure to stop further execution
+//        } else {
+//            // Log if the condition is not met
+//            error_log('Cookie not set or incorrect value');
+//        }
+//    }
+//}
+//add_action('template_redirect', 'check_watch_video_cookie_and_redirect');
+
+// Define the custom PHP shortcode for watch video button
+function custom_php_logic_video_shortcode($atts) {
+    // Initialize the variable that will hold the HTML content
+    $video_button_code = '';
+    // Check if the 'watchVideo' cookie exists
+//    echo isset($_COOKIE['watchVideo']);
+//    if (isset($_COOKIE['watchVideo'])) {
+//        $watchVideo = $_COOKIE['watchVideo'];
+//        echo "The value of watchVideo is: " . $watchVideo;
+//    } else {
+//        echo "The 'watchVideo' cookie is not set.";
+//    }
+
+    if (isset($_COOKIE['wordpress_watchVideo']) && $_COOKIE['wordpress_watchVideo'] == 'yes') {
+        // HTML for the button and video popup when the cookie is set
+        $video_button_code = '
+            <div class="videopopup video-popup-content">
+                <p class="box-button">
+                    <button id="show-video-btn" class="cta-button btn popupvideo-btn">Watch a short Video</button>
+                </p>
+            </div>
+
+            <div id="hero-video" class="hero-video video-popup-container">
+                <span id="close-btn">&times;</span>
+                <video id="video" controls class="home-hero-video">
+                    <source src="/wp-content/uploads/2024/02/iX-DataBridge_V1.mp4" type="video/mp4">
+                </video>
+            </div>';
+    } else {
+        // HTML for the button when the cookie is not set (redirect to registration page)
+        $video_button_code = '
+            <div class="videopopup video-popup-content">
+                <p class="box-button">
+                    <button id="show-video-btn" class="cta-button btn popupvideo-btn" onclick="window.location.href=\'' . esc_url( home_url( '/ix-databridge-video-register' ) ) . '\';">
+                        Watch a short Video
+                    </button>
+                </p>
+            </div>';
+    }
+
+    // Return the HTML code for the button and video popup
+    return $video_button_code;
+}
+
+// Register the custom shortcode
+add_shortcode('custom_php_logic_video', 'custom_php_logic_video_shortcode');
+
+// Define the custom PHP shortcode for watch video button
+function custom_php_logic_whitepaper1_shortcode($atts) {
+    if (isset($_COOKIE['wordpress_watchVideo']) && $_COOKIE['wordpress_watchVideo'] == 'yes') {
+        // HTML for the button when the cookie is not set (redirect to registration page)
+        $wp_button_code = '
+            <div class="videopopup video-popup-content">
+                <p class="box-button">
+                    <button id="show-whitepaper-btn2" class="cta-button btn popupvideo-btn" onclick="window.location.href=\'' . esc_url( home_url( '/complete-data-white-paper' ) ) . '\';">
+                    <!--<button id="show-whitepaper-btn1" class="btn popupvideo-btn" onclick="window.open(\'' . esc_url( home_url( '/complete-data-white-paper' ) ) . '\', \'_blank\');">-->
+                        View The White Paper
+                    </button>
+                </p>
+            </div>';
+    } else {
+        // HTML for the button and video popup when the cookie is set
+        $wp_button_code = '
+            <div class="videopopup video-popup-content">
+                <p class="box-button">
+                    <button id="show-whitepaper-btn2" class="cta-button btn popupvideo-btn" onclick="window.location.href=\'' . esc_url( home_url( '/register-to-access-white-papers/?wid=complete-data-white-paper' ) ) . '\';">
+                        View The White Paper
+                    </button>
+                </p>
+            </div>';
+    }
+
+    // Return the HTML code for the button and video popup
+    return $wp_button_code;
+}
+
+// Register the custom shortcode
+add_shortcode('custom_php_logic_whitepaper_1', 'custom_php_logic_whitepaper1_shortcode');
+
+// Define the custom PHP shortcode for view whitepaper button
+function custom_php_logic_whitepaper2_shortcode($atts) {
+    if (isset($_COOKIE['wordpress_watchVideo']) && $_COOKIE['wordpress_watchVideo'] == 'yes') {
+        // HTML for the button when the cookie is not set (redirect to registration page)
+        $wp_button_code = '
+            <div class="videopopup video-popup-content">
+                <p class="box-button">
+                    <button id="show-whitepaper-btn2" class="cta-button btn popupvideo-btn" onclick="window.location.href=\'' . esc_url( home_url( '/cms-0057f-white-paper' ) ) . '\';">
+                    <!--<button id="show-whitepaper-btn2" class="btn popupvideo-btn" onclick="window.open(\'' . esc_url( home_url( '/cms-0057f-white-paper' ) ) . '\', \'_blank\');">-->
+                        View The White Paper
+                    </button>
+                </p>
+            </div>';
+    } else {
+        // HTML for the button and video popup when the cookie is set
+        $wp_button_code = '
+            <div class="videopopup video-popup-content">
+                <p class="box-button">
+                    <button id="show-whitepaper-btn2" class="cta-button btn popupvideo-btn" onclick="window.location.href=\'' . esc_url( home_url( '/register-to-access-white-papers/?wid=cms-0057f-white-paper' ) ) . '\';">
+                        View The White Paper
+                    </button>
+                </p>
+            </div>';
+    }
+
+    // Return the HTML code for the button and video popup
+    return $wp_button_code;
+}
+
+// Register the custom shortcode
+add_shortcode('custom_php_logic_whitepaper_2', 'custom_php_logic_whitepaper2_shortcode');
+
+// Define the custom PHP shortcode for go to ix databridge page
+function custom_php_logic_btn_ixdatabridge_shortcode($atts) {
+        // HTML for the button and video popup when the cookie is set
+        $wp_button_code = '
+            <div class="videopopup video-popup-content">
+                <p class="box-button">
+                    <button id="ix-databridge-btn" class="cta-button btn popupvideo-btn" onclick="window.location.href=\'' . esc_url( home_url( '/ix-databridge' ) ) . '\';">
+                        Go Back
+                    </button>
+                </p>
+            </div>';
+
+    // Return the HTML code for the button and video popup
+    return $wp_button_code;
+}
+
+// Register the custom shortcode
+add_shortcode('custom_php_logic_btn_ixdatabridge', 'custom_php_logic_btn_ixdatabridge_shortcode');
+
+
+function add_video_redirect_script() {
+    // Check if we're on a page where the video exists (optional)
+//   if (is_single() || is_page()) {
+   ?>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById("video-13440-1");
+            if (video) {
+                video.addEventListener("ended", function() {
+                    // Redirect to a new URL after the video finishes
+                    window.location.href = "/ix-databridge";
+                });
+            }
+        });
+    </script>
+    <?php
+//}
+}
+add_action('wp_footer', 'add_video_redirect_script');

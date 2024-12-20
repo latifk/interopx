@@ -49,6 +49,7 @@ a.navbar-brand img {
     height: 120px;
     padding-top: 20px;
     padding-bottom: 20px;
+    max-width: 259px;
 }
 
 ul.navbar-nav {
@@ -866,7 +867,7 @@ section.about-last li {
 }
 
 .pdf {
-    margin: 5rem 0;
+    margin: 1rem 0;
 }
 
 
@@ -1511,7 +1512,11 @@ div#testing {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-#show-video-btn {
+#show-video-btn,
+#show-whitepaper-btn1,
+#show-whitepaper-btn2,
+#ix-databridge-btn
+{
     margin-top: 40px;
     cursor: pointer;
     background-color: #007BFF;
@@ -1519,6 +1524,10 @@ div#testing {
     border: none;
     padding: 12px 50px;
     width: 300px;
+}
+
+.cta-button {
+    margin-top: 0 !important;
 }
 
 .home-hero-video {
@@ -1658,7 +1667,10 @@ section.hero-about {
         margin: 12rem 0;
     }
 
-    #show-video-btn {
+    #show-video-btn,
+    #show-whitepaper-btn1,
+    #show-whitepaper-btn2,
+    #ix-databridge-btn {
         margin-top: 60px;
         width: 300px;
     }
@@ -1707,6 +1719,29 @@ section.hero-about {
 }
 
 @media screen and (max-width: 767px) {
+    .register-form .col-7,
+    .register-form .col-5 {
+        width: 100%;
+    }
+
+    .register-form .desc-text {
+        padding-right: 0;
+    }
+
+    .register-form .form-button {
+        display: flex;
+        margin: 2rem 0;
+        align-content: center;
+        flex-wrap: wrap;
+        align-items: stretch;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .register-form button.btn.g-recaptcha {
+        margin-bottom: 20px;
+    }
+
     section.slider-home:not(.hero-image) {
         flex-direction: column-reverse;
         flex-wrap: nowrap;
@@ -1737,7 +1772,10 @@ section.hero-about {
         bottom: 15% !important;
     }
 
-    #show-video-btn {
+    #show-video-btn,
+    #show-whitepaper-btn1,
+    #show-whitepaper-btn2,
+    #ix-databridge-btn {
         padding: 12px 20px;
         width: 200px;
     }

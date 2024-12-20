@@ -87,16 +87,21 @@ get_header();
                   ></textarea>
                 </div>
                 <div class="contact-btn form-button">
-                    <!--PROD CAPTCHA-UNCOMMENT BEFORE DEPLOYING-->
-<!--                  <button class="btn g-recaptcha"-->
-<!--                    data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"-->
-<!--                    data-callback='submitContact'-->
-<!--                    data-action='submit'>Submit</button>-->
-                    <!--LOCAL and STAGE CAPTCHA-->
-                    <button class="btn g-recaptcha"
-                    data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"
-                    data-callback='submitContact'
-                    data-action='submit'>Submit</button>
+                    <?php
+                    if( $_SERVER['SERVER_NAME'] == 'interopx.com') { ?>
+                        <!--PROD CAPTCHA-UNCOMMENT BEFORE DEPLOYING-->
+                        <button class="btn g-recaptcha"
+                                data-sitekey="6LedYqAlAAAAAHDWMlBF4sRh3Ja7AoSQD9aQQgzC"
+                                data-callback='submitContact'
+                                data-action='submit'>Submit</button>
+                    <?php } else { ?>
+                        <!--LOCAL and STAGE CAPTCHA-->
+                        <button class="btn g-recaptcha"
+                                data-sitekey="6LdYQ08qAAAAAOAQ2tuWSy5jFJRYmnHf0MQUYoiM"
+                                data-callback='submitContact'
+                                data-action='submit'>Submit</button>
+                    <?php } ?>
+
                 </div>
                   <p class="mail-response"></p>
                   <!--				<p class="mail-response" style="margin: 2rem 0;text-align: center;color: #0e8af0;font-weight: bold;"></p>-->

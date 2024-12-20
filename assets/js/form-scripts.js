@@ -3,6 +3,9 @@ function submitForm(formSelector) {
     var formData = new FormData(form);
     var isValid = true; // Flag to track form validity
     var errorMessage = ''; // To accumulate error messages
+    // Check if 'whitepaper_id' exists in the form data, if not set it to an empty string
+    var whitepaperId = formData.has('whitepaper_id') ? formData.get('whitepaper_id') : '';
+
 
     // Clear previous error highlights and messages
     Array.from(form.elements).forEach(function(element) {
@@ -68,9 +71,27 @@ function submitForm(formSelector) {
         success: function(response) {
             if (response.status === true) {
                 if (formSelector === '.register-page-form') {
+                    setWatchVideoCookie();
                     // Redirect to the watch overview video page
                     window.location.href = '/overview-ix-databridge';
-                    setCookie('watchVideo', 1, 1000); // Store for 7 days
+                }
+                else if (formSelector === '.wp-register-page-form') {
+                    setWatchVideoCookie();
+                    // Redirect to the watch overview video page
+                    window.location.href = '/'+ whitepaperId;
+
+                    // First, ensure that the PDF is opened in a new tab directly by user action
+                    const pdfWindow = window.open( '/'+ whitepaperId, '_blank');
+
+                    // Check if the pop-up was blocked
+                    if (pdfWindow === null) {
+                        alert("It seems like the pop-up was blocked. Please allow pop-ups to view the PDF.");
+                    } else {
+                        // Redirect to the new page after a short delay
+                        setTimeout(function() {
+                            window.location.href = '/ix-databridge'; // return to landing page
+                        }, 300);  // 300ms should be sufficient for the pop-up to open
+                    }
                 }
                 else {
                     // Redirect to the thank you page
@@ -102,4 +123,27 @@ function submitContactFooter(token) {
 
 function submitRegister(token) {
     submitForm(".register-page-form")
+}
+
+function submitWPRegister(token) {
+    submitForm(".wp-register-page-form")
+}
+
+function setWatchVideoCookie() {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days
+
+    // Check the hostname to set cookies based on the environment
+    if (window.location.hostname === 'interopx2.flywheelstaging.com') {
+        // Set cookie for staging
+        document.cookie = 'wordpress_watchVideo=yes; expires=' + expires.toUTCString() + '; path=/; domain=.interopx2.flywheelstaging.com; secure; samesite=None';
+    } else if (window.location.hostname === 'interopx.com') {
+        // Set cookie for production
+        document.cookie = 'wordpress_watchVideo=yes; expires=' + expires.toUTCString() + '; path=/; domain=.interopx.com; secure; samesite=None';
+    } else if (window.location.hostname === 'interopx.local') {
+        // Set cookie for local environment (http://interopx.local or https://interopx.local)
+        document.cookie = 'wordpress_watchVideo=yes; expires=' + expires.toUTCString() + '; path=/; domain=.interopx.local; secure; samesite=None';
+
+        // document.cookie = 'watchVideo=yes; expires=' + expires.toUTCString() + '; path=/; domain=.interopx.local; samesite=None';
+    }
 }
