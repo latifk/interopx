@@ -80,18 +80,18 @@ function submitForm(formSelector) {
                     // Redirect to the watch overview video page
                     window.location.href = '/'+ whitepaperId;
 
-                    // First, ensure that the PDF is opened in a new tab directly by user action
-                    const pdfWindow = window.open( '/'+ whitepaperId, '_blank');
-
-                    // Check if the pop-up was blocked
-                    if (pdfWindow === null) {
-                        alert("It seems like the pop-up was blocked. Please allow pop-ups to view the PDF.");
-                    } else {
-                        // Redirect to the new page after a short delay
-                        setTimeout(function() {
-                            window.location.href = '/ix-databridge'; // return to landing page
-                        }, 300);  // 300ms should be sufficient for the pop-up to open
-                    }
+                    // // First, ensure that the PDF is opened in a new tab directly by user action
+                    // const pdfWindow = window.open( '/'+ whitepaperId, '_blank');
+                    //
+                    // // Check if the pop-up was blocked
+                    // if (pdfWindow === null) {
+                    //     alert("It seems like the pop-up was blocked. Please allow pop-ups to view the PDF.");
+                    // } else {
+                    //     // Redirect to the new page after a short delay
+                    //     setTimeout(function() {
+                    //         window.location.href = '/ix-databridge'; // return to landing page
+                    //     }, 300);  // 300ms should be sufficient for the pop-up to open
+                    // }
                 }
                 else {
                     // Redirect to the thank you page

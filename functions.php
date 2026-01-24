@@ -92,7 +92,14 @@ function add_swiper_script() {
 add_action('wp_enqueue_scripts', 'add_swiper_script');
 
 function enqueue_form_scripts() {
-    wp_enqueue_script('form-scripts', get_template_directory_uri() . '/assets/js/form-scripts.js', array('jquery'), null, true);
+//    wp_enqueue_script('form-scripts', get_template_directory_uri() . '/assets/js/form-scripts.js', array('jquery'), null, true);
+    wp_enqueue_script(
+        'form-scripts',
+        get_template_directory_uri() . '/assets/js/form-scripts.js',
+        array('jquery'),
+        filemtime(get_template_directory() . '/assets/js/form-scripts.js'),
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'enqueue_form_scripts');
 

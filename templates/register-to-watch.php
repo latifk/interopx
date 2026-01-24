@@ -4,6 +4,9 @@
  * Template name: Register to watch
  */
 get_header();
+
+$title = "iX DataBridge Enables Health Plans to";
+$subtitle = "";
 ?>
 
 
@@ -21,21 +24,23 @@ get_header();
       <div class="container">
         <div class="row">
           <div class="col-7">
-              <h1>iX DataBridge – Unlock Cost-Efficient Access to Patient Data for HEDIS, Risk Adjustment, and CMS Reporting</h1>
-              <h2>Access our video by sharing your contact information</h2>
+              <h1><?php echo $title ?></h1>
+              <?php if (strlen($subtitle) > 0) { ?>
+                  <h2><?php echo $subtitle ?></h2>
+              <?php } ?>
               <p class="desc-text">
-                  Discover how <strong>iX DataBridge</strong> simplifies patient data access with a comprehensive,
-                  always up-to-date solution. This cloud-native application seamlessly delivers ‘ready-to-analyze’
-                  clinical data through APIs (FHIR, REST) or SFTP, ensuring accurate and timely data for health
-                  plans, ACOs, and IDNs. Once deployed in the <strong>InteropX</strong> or your cloud environment, iX DataBridge automates patient
-                  data extraction from provider systems, reducing costs and enhancing efficiency for critical processes
-                  like HEDIS, risk adjustment, and closure of care gaps.
+                  <!--                  Request our white papers and schedule a 30-minute exploratory call with our experts. Give us a chance to show you how we can boost your Medicare Advantage VBC Contracts operations.-->
+              <ul>
+                  <li class="desc-text">Acquire Complete and Always Up-to-Date Clinical Data for the Patient Population, and</li>
+                  <li class="desc-text">Non-Intrusively Implement Fully Compliant CMS-0057 Final Rule Provisions</li>
+              </ul>
               </p>
           </div>
           <div class="col-5">
             <h2 class="title">Watch Now</h2>
               <p class="desc-text">
-                  Please provide your name and email below to access our <strong>exclusive video</strong> and explore how iX DataBridge transforms data accessibility for payers.
+<!--                  Please provide your name and email below to access our <strong>exclusive video</strong> and explore how iX DataBridge transforms data accessibility for payers.-->
+                  Please provide your name and email below to access our white papers and <span class="no-wrap-text">iX DataBridge</span> video by sharing your contact information
               </p>
             <form class="register-page-form">
               <div class="row">

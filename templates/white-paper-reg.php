@@ -12,17 +12,18 @@ $wid_name = str_replace('-', ' ', $wid_value);
 
 // Capitalize the first letter of each word
 $wid_name= ucwords($wid_name);
-$title = "";
+$title = "iX DataBridge Enables Health Plans to";
 $subtitle = "";
+
 if ($wid_value == "cms-0057f-white-paper") {
     $wid = 'getting-your-cms-0057-f-implementation-right';
-    $title = "Getting your CMS-0057-F Implementation Right";
-    $subtitle = "Access our CMS-0057-F White Paper by sharing your contact information";
+//    $title = "Getting your CMS-0057-F Implementation Right";
+//    $subtitle = "Access our CMS-0057-F White Paper by sharing your contact information";
 }
 else if ($wid_value == "complete-data-white-paper") {
     $wid = 'complete-data-is-the-key-to-streamlining-medicare-advantage-operations';
-    $title = "Complete Data is the Key to Streamlining Medicare Advantage Operations";
-    $subtitle = "Access our Complete and always up-to-date Data White Paper by sharing your contact information";
+//    $title = "Complete Data is the Key to Streamlining Medicare Advantage Operations";
+//    $subtitle = "Access our Complete and always up-to-date Data White Paper by sharing your contact information";
 }
 ?>
 
@@ -41,15 +42,22 @@ else if ($wid_value == "complete-data-white-paper") {
         <div class="row">
           <div class="col-7">
               <h1><?php echo $title ?></h1>
-              <h2><?php echo $subtitle ?></h2>
+              <?php if (strlen($subtitle) > 0) { ?>
+                <h2><?php echo $subtitle ?></h2>
+              <?php } ?>
               <p class="desc-text">
-                  Request our white papers and schedule a 30-minute exploratory call with our experts. Give us a chance to show you how we can boost your Medicare Advantage VBC Contracts operations.
+<!--                  Request our white papers and schedule a 30-minute exploratory call with our experts. Give us a chance to show you how we can boost your Medicare Advantage VBC Contracts operations.-->
+              <ul>
+                  <li class="desc-text">Acquire Complete and Always Up-to-Date Clinical Data for the Patient Population, and</li>
+                  <li class="desc-text">Non-Intrusively Implement Fully Compliant CMS-0057 Final Rule Provisions</li>
+              </ul>
               </p>
           </div>
           <div class="col-5">
             <h2 class="title">View Now</h2>
               <p class="desc-text">
-                  Please provide your name and email below to access our <strong><?php echo $wid_name ?></strong> and explore how iX DataBridge transforms data accessibility for payers.
+<!--                  Please provide your name and email below to access our <strong>--><?php //echo $wid_name ?><!--</strong> and explore how iX DataBridge transforms data accessibility for payers.-->
+                  Please provide your name and email below to access our white papers and <span class="no-wrap-text">iX DataBridge</span> video by sharing your contact information
               </p>
             <form class="wp-register-page-form">
               <div class="row">

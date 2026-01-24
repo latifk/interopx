@@ -48,7 +48,7 @@ li.nav-item {
 a.navbar-brand img {
     height: 120px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     max-width: 259px;
 }
 
@@ -170,18 +170,33 @@ section.slider-home.hero-image {
     background-position: center center; /* Centers the image */
     background-repeat: no-repeat; /* Ensures the image doesn't repeat */
     width: 100%; /* Ensures the element takes up the full width */
-    height: 80vh; /* Full viewport height, adjust as needed */
+    /*height: 80vh; !* Full viewport height, adjust as needed *!*/
+    height: auto !important;
 
     @media screen and (max-width: 767px) {
-        height: auto !important;;
+        height: auto !important;
     }
 }
 
-/*.swiper-wrapper.homepage.product-page {*/
-    .swiper-wrapper.homepage {
-    @media screen and (max-width: 1200px) and (min-width: 767px) {
-        /*height: 40vh;*/
+/* Product page hero background */
+.product-background {
+    background-image: url('/wp-content/uploads/2024/07/products.jpg');
+}
+
+.homepage-background {
+    background-image: url('/wp-content/uploads/2024/07/homepage.png');
+    background-size: 80% 100% !important;  /* Default size for larger screens */
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 767px) {
+    .homepage-background {
+        background-size: contain !important;  /* Ensure it's applied on mobile */
     }
+}
+
+.swiper-wrapper.product-page {
+    height: 80vh !important;
 }
 
 /* Overlay to dim the background */
@@ -250,7 +265,7 @@ section.slider-home h1 {
 
 section.slider-home p {
     color: white;
-    width: 80%;
+    /*width: 80%;*/
     text-align: center;
     /*font-size: 20px;*/
     max-width: 1200px;
@@ -947,7 +962,7 @@ section.contact-hero h1::after {
     /*text-transform: uppercase;*/
 }
 
-.contact-form h2::after {
+.contact-form h1::after {
     content: "";
     background: #2b99f3;
     height: 3px;
@@ -958,6 +973,9 @@ section.contact-hero h1::after {
     margin: 1rem 0;
 }
 
+.no-wrap-text {
+    white-space: nowrap;
+}
 
 .contact-form input {
     background: none !important;
@@ -1528,6 +1546,7 @@ div#testing {
 
 .cta-button {
     margin-top: 0 !important;
+    padding: 12px 25px;
 }
 
 .home-hero-video {
@@ -1671,8 +1690,8 @@ section.hero-about {
     #show-whitepaper-btn1,
     #show-whitepaper-btn2,
     #ix-databridge-btn {
-        margin-top: 60px;
-        width: 300px;
+        margin-top: 20px !important;
+        padding: 12px 25px;
     }
 
     .hero-content {
@@ -2018,8 +2037,8 @@ section.hero-about {
     footer {
         padding: 2rem 1rem;
     }
-	
-	
+
+
 footer .form-button {
 	display: flex;
     flex-direction: column;
@@ -2444,15 +2463,6 @@ li.nav-item a.requestademo {
     resize: vertical !important;
 }
 
-/* fProduct page hero background */
-.product-background {
-    background-image: url('/wp-content/uploads/2024/07/products.jpg');
-}
-
-.homepage-background {
-    background-image: url('/wp-content/uploads/2024/07/homepage.png');
-}
-
 .figure-background {
     background: white;
 }
@@ -2484,3 +2494,83 @@ li.nav-item a.requestademo {
         font-weight: 800;
     }
 }
+
+.cta-container .elementor-14889 .elementor-element.elementor-element-6e49b352 {
+    margin-left: 0;
+    margin
+    -top: 30px;
+}
+
+/* Wrapper becomes a vertical flex container */
+.navbar-brand-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+  /* Top stays at top naturally */
+  .navbar-brand-top {
+    flex: 0 0 auto;
+  }
+
+  /* Bottom is pushed to the bottom */
+  .navbar-brand-bottom {
+    margin-top: auto;
+    flex: 0 0 auto;
+  }
+
+  /* Optional: nice spacing */
+  .navbar-brand-top img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .navbar-brand-bottom a {
+    display: inline-block;
+    line-height: 0.5;
+    text-decoration: underline;
+  }
+
+  /* Brand wrapper layout (top + bottom) */
+.navbar-brand-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Remove extra spacing Bootstrap may add */
+  .navbar-brand-top .navbar-brand,
+  .navbar-brand-bottom .navbar-brand { 
+    padding: 0;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  /* Make bottom text smaller */
+  .navbar-brand-bottom a {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* Bring bottom link closer to top logo */
+  .navbar-brand-bottom {
+    margin-top: 4px;
+    margin-bottom: 15px;
+  }
+  /* Optional: if the logo has extra bottom whitespace */
+  .navbar-brand-top img {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .navbar-brand-bottom { margin-top: auto; }
+
+  /* Bottom brand link styling */
+    .navbar-brand-bottom a {
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    }
+
+

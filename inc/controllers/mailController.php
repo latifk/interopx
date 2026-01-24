@@ -19,6 +19,7 @@ class Mail {
         $referrer = get_transient('referrerURL');
 
         $to = ['info@interopx.com'];
+        $from = "ixwebsiteinfo@interopx.com";
         $subject = "New message from website";
 
         // Create the email body
@@ -36,7 +37,8 @@ class Mail {
         // Set email headers
         $headers = [
             'Content-Type: text/html; charset=UTF-8',
-            'From: ' . $mailData['Name'] . ' <' . sanitize_email($mailData['Email']) . '>',
+//            'From: ' . $mailData['Name'] . ' <' . sanitize_email($mailData['Email']) . '>',
+            'From: ' . $mailData['Name'] . ' <' . sanitize_email($from) . '>',
         ];
 
         $attachments = [];

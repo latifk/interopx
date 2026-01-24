@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Template name: Homepage
@@ -6,6 +6,17 @@
 get_header();
 $image = 1;
 ?>
+<div class="cta-container">
+        <!-- Render the Elementor template -->
+        <?php
+        // Specify the Elementor template ID
+        $template_id = 14934; // Replace with your actual template ID
+
+        // Render the Elementor template using Elementor's API
+        echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id );
+        ?>
+
+    </div>
 <?php if($image == 1) {   ?>
     <section class="slider-home hero-image">
           <div class="container-fluid">
@@ -22,29 +33,20 @@ $image = 1;
                         </p>
 
                       </div>
-<!--                        --><?php //if ( get_field('hero_button_video') ) { ?>
-<!--                            <div class="hero-content-bottom">-->
-<!--                                <p class="box-button">-->
-<!--                                    <button id="show-video-btn" class="btn" onclick="window.location.href='/ix-databridge-video-register';">-->
-<!--                                        Watch a short Video-->
-<!--                                    </button>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        --><?php //} ?>
 
-                      <?php if ( get_field('hero_button_video') ) { ?>
-                          <div class="hero-content-bottom">
-                              <p class="box-button">
-                                  <button id="show-video-btn" class="btn" ><?php echo get_field('hero_button_text'); ?></button>
-                              </p>
-                          </div>
-                     <?php } ?>
-                      <div id="hero-video" class="hero-video">-->
-                          <span id="close-btn">&times;</span>
-                          <video id="video" controls class="home-hero-video">
-                             <source src="<?php echo get_field('hero_button_video'); ?>" type="video/mp4; codec='hvcl">
-                         </video>
-                      </div>
+<!--                      --><?php //if ( get_field('hero_button_video') ) { ?>
+<!--                          <div class="hero-content-bottom">-->
+<!--                              <p class="box-button">-->
+<!--                                  <button id="show-video-btn" class="btn" >--><?php //echo get_field('hero_button_text'); ?><!--</button>-->
+<!--                              </p>-->
+<!--                          </div>-->
+<!--                     --><?php //} ?>
+<!--                      <div id="hero-video" class="hero-video">-->
+<!--                          <span id="close-btn">&times;</span>-->
+<!--                          <video id="video" controls class="home-hero-video">-->
+<!--                             <source src="--><?php //echo get_field('hero_button_video'); ?><!--" type="video/mp4; codec='hvcl">-->
+<!--                         </video>-->
+<!--                      </div>-->
                     </div>
                   </div>
                 </div>
@@ -160,6 +162,19 @@ $image = 1;
     </div>
 </section>
 <?php }  ?>
+
+    <div class="cta-container">
+        <!-- Render the Elementor template -->
+        <?php
+        // Specify the Elementor template ID
+        $template_id = 14889; // Replace with your actual template ID
+
+        // Render the Elementor template using Elementor's API
+        echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id );
+        ?>
+
+    </div>
+
     <section class="boxes <?php echo $box_class; ?>">
       <div class="container">
         <div class="row">
