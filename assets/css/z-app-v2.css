@@ -2497,7 +2497,7 @@ li.nav-item a.requestademo {
 
 .cta-container .elementor-14889 .elementor-element.elementor-element-6e49b352 {
     margin-left: 0;
-    margin
+    margin: 0;
     -top: 30px;
 }
 
@@ -2525,12 +2525,6 @@ li.nav-item a.requestademo {
     height: auto;
   }
 
-  .navbar-brand-bottom a {
-    display: inline-block;
-    line-height: 0.5;
-    text-decoration: underline;
-  }
-
   /* Brand wrapper layout (top + bottom) */
 .navbar-brand-wrapper{
     display: flex;
@@ -2540,16 +2534,10 @@ li.nav-item a.requestademo {
 
   /* Remove extra spacing Bootstrap may add */
   .navbar-brand-top .navbar-brand,
-  .navbar-brand-bottom .navbar-brand { 
+  .navbar-brand-bottom .navbar-brand {
     padding: 0;
     margin: 0;
     line-height: 1.1;
-  }
-
-  /* Make bottom text smaller */
-  .navbar-brand-bottom a {
-    font-size: 12px;
-    font-weight: 500;
   }
 
   /* Bring bottom link closer to top logo */
@@ -2567,10 +2555,20 @@ li.nav-item a.requestademo {
 
   /* Bottom brand link styling */
     .navbar-brand-bottom a {
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 2px;
+        font-size: 14px;
+        font-weight: 600;
+        text-underline-offset: 2px;
+        font-family: "Source Sans Pro", Arial, sans-serif;
+        display: inline-block;
+        line-height: 0.5;
+        text-decoration: none;
     }
+
+    div#acq-popup-left {
+        /* border-left-color: #E10600; */
+        border-left-color: #36ADBB
+
+    }
+
 
 

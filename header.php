@@ -42,7 +42,7 @@
               </div>
               <div class="navbar-brand-bottom">
                 <a class="navbar-brand" href="https://www.onyxhealth.io/" target = "_blank"
-                  >An Onyx Company</a>
+                  >An Onyx Technolody Company</a>
               </div>
             </div>
             <button
