@@ -34,7 +34,10 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
-            <div class="navbar-brand-wrapper">
+            <a class="navbar-brand" href="/"
+              ><img src="<?php echo get_template_directory_uri()?>/assets/images/logo.jpg" class="img-fluid"
+            /></a>
+            <!-- <div class="navbar-brand-wrapper">
               <div class="navbar-brand-top">
                 <a class="navbar-brand" href="/"
                   ><img src="<?php echo get_template_directory_uri()?>/assets/images/logo.jpg" class="img-fluid"
@@ -44,7 +47,7 @@
                 <a class="navbar-brand" href="https://www.onyxhealth.io/" target = "_blank"
                   >An Onyx Technolody Company</a>
               </div>
-            </div>
+            </div> -->
             <button
               class="navbar-toggler"
               type="button"

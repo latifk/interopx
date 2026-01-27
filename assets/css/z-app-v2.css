@@ -48,7 +48,7 @@ li.nav-item {
 a.navbar-brand img {
     height: 120px;
     padding-top: 20px;
-    /* padding-bottom: 20px; */
+    padding-bottom: 20px;
     max-width: 259px;
 }
 
@@ -2497,42 +2497,36 @@ li.nav-item a.requestademo {
 
 .cta-container .elementor-14889 .elementor-element.elementor-element-6e49b352 {
     margin-left: 0;
-    margin: 0;
-    -top: 30px;
+    margin-top: 30px;
 }
 
-/* Wrapper becomes a vertical flex container */
-.navbar-brand-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+/* style announcement Onyx left section left border */
+div#acq-popup-left {
+    border-left-color: #36ADBB;
 }
-  /* Top stays at top naturally */
-  .navbar-brand-top {
+
+/* Top stays at top naturally */
+/* .navbar-brand-top {
     flex: 0 0 auto;
   }
 
-  /* Bottom is pushed to the bottom */
   .navbar-brand-bottom {
     margin-top: auto;
     flex: 0 0 auto;
   }
 
-  /* Optional: nice spacing */
   .navbar-brand-top img {
     display: block;
     max-width: 100%;
     height: auto;
   }
 
-  /* Brand wrapper layout (top + bottom) */
 .navbar-brand-wrapper{
     display: flex;
     flex-direction: column;
     height: 100%;
   }
 
-  /* Remove extra spacing Bootstrap may add */
   .navbar-brand-top .navbar-brand,
   .navbar-brand-bottom .navbar-brand {
     padding: 0;
@@ -2540,12 +2534,11 @@ li.nav-item a.requestademo {
     line-height: 1.1;
   }
 
-  /* Bring bottom link closer to top logo */
   .navbar-brand-bottom {
     margin-top: 4px;
     margin-bottom: 15px;
   }
-  /* if the logo has extra bottom whitespace */
+
   .navbar-brand-top img {
     display: block;
     margin-bottom: 0;
@@ -2553,20 +2546,11 @@ li.nav-item a.requestademo {
 
   .navbar-brand-bottom { margin-top: auto; }
 
-  /* Bottom brand link styling */
-    .navbar-brand-bottom a {
+  .navbar-brand-bottom a {
         font-size: 14px;
         font-weight: 600;
         font-family: "Source Sans Pro", Arial, sans-serif;
         display: inline-block;
         line-height: 0.5;
         text-decoration: none !important;
-    }
-
-    div#acq-popup-left {
-        border-left-color: #36ADBB
-
-    }
-
-
-
+    } */
